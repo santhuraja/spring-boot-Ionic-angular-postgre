@@ -1,8 +1,7 @@
 package com.sha.serverusermanagement.controller;
 
-import com.sha.serverusermanagement.model.Role;
-import com.sha.serverusermanagement.model.User;
-import com.sha.serverusermanagement.service.UserService;
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.security.Principal;
+import com.sha.serverusermanagement.model.Role;
+import com.sha.serverusermanagement.model.User;
+import com.sha.serverusermanagement.service.UserService;
 
 @RestController
 public class UserController {
@@ -43,4 +44,5 @@ public class UserController {
     public ResponseEntity<?> getAllUsers(){
         return ResponseEntity.ok(userService.findAllUsers());
     }
+
 }

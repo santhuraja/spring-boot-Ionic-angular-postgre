@@ -3,8 +3,9 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {User} from '../model/user';
+import {School} from '../model/school';
 
-let API_URL = "http://192.168.1.3:8080/api/user/";
+let API_URL = "http://localhost:8080/api/";
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class AuthService {
       :
       {});
 
-      return this.http.get<any>(API_URL + "login", {headers: headers})
+      return this.http.get<any>(API_URL + "user/login", {headers: headers})
       .pipe(map(response => {
         if(response){
           localStorage.setItem('currentUser', JSON.stringify(response));
@@ -29,14 +30,14 @@ export class AuthService {
   }
 
   logOut(): Observable<any> {
-    return this.http.post(API_URL + "logout", {})
+    return this.http.post(API_URL + "user/logout", {})
     .pipe(map(response => {
       localStorage.removeItem('currentUser');
     }));
   }
 
   register(user: User): Observable<any> {
-    return this.http.post(API_URL + 'registration', JSON.stringify(user),
+    return this.http.post(API_URL + 'user/registration', JSON.stringify(user),
   {headers: {"Content-Type":"application/json; charset=UTF-8"}});
   }
 

@@ -5,7 +5,7 @@ import {map} from 'rxjs/operators';
 import {School} from '../../model/school';
 import {User} from '../../model/user';
 
-let API_URL = "http://localhost:8080/api/school/add";
+let API_URL = "http://localhost:8080/api";
 
 @Injectable({
   providedIn: 'root'
@@ -13,24 +13,27 @@ let API_URL = "http://localhost:8080/api/school/add";
 
 export class AddSchoolService {
   currentUser: User;
+  headers: HttpHeaders;
   constructor(private http: HttpClient) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-
+    this.headers = new HttpHeaders({
+      authorization:'Bearer ' + this.currentUser.token,
+      "Content-Type":"application/json; charset=UTF-8"
+    });
   }
 
   logOut(): Observable<any> {
-    return this.http.post(API_URL + "logout", {})
+    return this.http.post(API_URL + "/user/logout", {})
     .pipe(map(response => {
       localStorage.removeItem('currentUser');
     }));
   }
   
  addSchool(school: School): Observable<any> {
-    return this.http.post(API_URL, JSON.stringify(school), {headers: new HttpHeaders({ContentType:'application/json', authorization:'Basic ' + btoa(this.currentUser.username + ":" + this.currentUser.password)})});
+    return this.http.post(API_URL + "/school/add", JSON.stringify(school), {headers: this.headers});
   }
 
   findAllSchools(): Observable<any> {
-    return this.http.get(API_URL + "all",
-  {headers: {"Content-Type":"application/json; charset=UTF-8"}});
+    return this.http.get(API_URL + "/school/all", {headers: this.headers});
   }
 }

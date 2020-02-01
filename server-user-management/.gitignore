@@ -1,4 +1,5 @@
 HELP.md
+*/target/
 .gradle
 /build/
 !gradle/wrapper/gradle-wrapper.jar
@@ -28,3 +29,6 @@ HELP.md
 
 ### VS Code ###
 .vscode/
+*.class
+**/target/**
+/target/

@@ -10,7 +10,11 @@ import java.io.Serializable;
 @Table(name="user1")
 public class User implements Serializable {
 
-    @Id
+    /**
+	 */
+	private static final long serialVersionUID = 6171971512025952421L;
+
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -26,4 +30,7 @@ public class User implements Serializable {
     @Enumerated(EnumType.STRING)
     @Column(name="role")
     private Role role;
+    
+    @Transient
+    private String token;    
 }

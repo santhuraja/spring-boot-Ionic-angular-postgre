@@ -28,8 +28,13 @@ export class RegisterPage implements OnInit {
       this.dismiss();
       this.router.navigate(['/login']);
     },err => {
-      this.errorMessage = "Username already exist";
-      this.dismiss();
+	 if (err && err.status === 409) {
+		this.errorMessage = "Username / Password is not valid.";
+	 } else {
+	  console.log(err);
+      this.errorMessage = "Unexpected error occurred.";
+      this.dismiss();	 
+	 }
     });
   }
 

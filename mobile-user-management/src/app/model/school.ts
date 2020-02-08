@@ -1,8 +1,8 @@
 export class School {
-  schoolname:string;
-  schoolid:string="";
+  name:string;
+  id:string="";
   address:string="";
   country:string="";
-  mobilenumber:string="";
+  phone:string="";
   email:string="";
 }

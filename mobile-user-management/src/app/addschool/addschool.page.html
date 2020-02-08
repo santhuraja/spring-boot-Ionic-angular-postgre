@@ -24,10 +24,10 @@
         <form name="add-school" (ngSubmit)="f.form.valid && addSchool()" #f="ngForm" novalidate>
         <ion-card-content >
           <ion-item>
-            <ion-input type="text" placeholder="School Name" class="form-control input-text-custom" id="schoolname" name="schoolname" [(ngModel)]="school.schoolname" #schoolname="ngModel" required></ion-input>
+            <ion-input type="text" placeholder="School Name" class="form-control input-text-custom" id="name" name="name" [(ngModel)]="school.name" #schoolname="ngModel" required></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input type="text" placeholder="School Id" class="form-control input-text-custom" id="schoolid" name="schoolid" [(ngModel)]="school.schoolid" #schoolname="ngModel" required></ion-input>
+            <ion-input type="text" placeholder="School Id" class="form-control input-text-custom" id="id" name="id" [(ngModel)]="school.id" #schoolname="ngModel" required></ion-input>
           </ion-item>
           <ion-item>
             <ion-textarea placeholder="School Address" class="form-control input-text-custom" id="address" name="address" [(ngModel)]="school.address" #schoolname="ngModel" required></ion-textarea>
@@ -47,7 +47,7 @@
           </ion-item>
           <ion-item>
             <ion-icon item-left name="phone-portrait" ></ion-icon>
-            <ion-input type="text" placeholder="Mobile no" class="form-control input-text-custom" id="mobilenumber" name="mobilenumber" [(ngModel)]="school.mobilenumber" #schoolname="ngModel" required></ion-input>
+            <ion-input type="text" placeholder="Mobile no" class="form-control input-text-custom" id="phone" name="phone" [(ngModel)]="school.phone" #schoolname="ngModel" required></ion-input>
           </ion-item>
           <ion-item>
             <ion-icon item-left name="mail" ></ion-icon>

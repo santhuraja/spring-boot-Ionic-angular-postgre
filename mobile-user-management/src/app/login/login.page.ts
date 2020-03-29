@@ -29,8 +29,15 @@ export class LoginPage implements OnInit {
       this.dismiss();
       this.router.navigate(['/home']);
     },err =>{
-      this.errorMessage ="Username or password is incorrect";
-      this.dismiss();
+      if (err && err.status === 401) {
+        this.errorMessage = "Username or password is incorrect";
+  	  } else if (err && err.status === 409) {
+        this.errorMessage = "Username / Password is not valid";
+      } else {
+  	    console.log(err);
+        this.errorMessage = "Unexpected error occurred";
+  	 }
+  	  this.dismiss();	 
     });
   }
 

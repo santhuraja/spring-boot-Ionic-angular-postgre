@@ -1,0 +1,65 @@
+<ion-item *ngIf="errorMessage" class="help-block" no-lines color="danger">
+  <ion-label><strong>Error: </strong>{{errorMessage}}</ion-label>
+</ion-item>
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        Add New School
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+ 
+  <ion-content class="background">
+       <ion-card class="bluecolor">
+        <ion-card-content >
+          <ion-text color="dark">
+            <h3>School Information</h3>
+          </ion-text>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <form name="add-school" (ngSubmit)="f.form.valid && addSchool()" #f="ngForm" novalidate>
+        <ion-card-content >
+          <ion-item>
+            <ion-input type="text" placeholder="School Name" class="form-control input-text-custom" id="name" name="name" [(ngModel)]="school.name" #schoolname="ngModel" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" placeholder="School Id" class="form-control input-text-custom" id="id" name="id" [(ngModel)]="school.id" #schoolname="ngModel" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-textarea placeholder="School Address" class="form-control input-text-custom" id="address" name="address" [(ngModel)]="school.address" #schoolname="ngModel" required></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-select placeholder="Select Country" class="form-control input-text-custom" id="country" name="country" [(ngModel)]="school.country" #schoolname="ngModel" required>
+              <ion-select-option value="93">Afghanistan</ion-select-option>
+              <ion-select-option value="355">Albania	</ion-select-option>			
+              <ion-select-option value="213">Algeria	</ion-select-option>			
+              <ion-select-option value="1-684">American	</ion-select-option>	
+              <ion-select-option value="376">Andorra	</ion-select-option>			
+              <ion-select-option value="244">Angola		</ion-select-option>		
+              <ion-select-option value="1-264">Anguilla	</ion-select-option>	
+              <ion-select-option value="672">Antarctica	</ion-select-option>		
+              <ion-select-option value="1-268">Antigua 	</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-icon item-left name="phone-portrait" ></ion-icon>
+            <ion-input type="text" placeholder="Mobile no" class="form-control input-text-custom" id="phone" name="phone" [(ngModel)]="school.phone" #schoolname="ngModel" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-icon item-left name="mail" ></ion-icon>
+            <ion-input type="text" placeholder="Email Id" class="form-control input-text-custom" id="email" name="email" [(ngModel)]="school.email" #schoolname="ngModel" required></ion-input>
+          </ion-item>
+        </ion-card-content>
+        <ion-item>
+          <ion-button class="bluecolor" type="submit" expand="block"><ion-text color="dark">Add New School</ion-text></ion-button>
+          <ion-button class="bluecolor" fill="clear" expand="block" [routerLink]="['/dashboard']" ><ion-text color="dark">Cancel</ion-text></ion-button>
+        </ion-item>
+      </form>
+      </ion-card>
+  </ion-content>
+
+  

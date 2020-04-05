@@ -1,4 +1,4 @@
-<ion-item *ngIf="errorMessage" class="help-block" no-lines color="danger">
+<ion-item *ngIf="errorMessage && errorMessage != ''" class="help-block" no-lines color="danger">
   <ion-label><strong>Error: </strong>{{errorMessage}}</ion-label>
 </ion-item>
 <ion-header>
@@ -30,7 +30,42 @@
             <ion-input type="text" placeholder="School Id" class="form-control input-text-custom" id="id" name="id" [(ngModel)]="school.id" #schoolname="ngModel" required></ion-input>
           </ion-item>
           <ion-item>
+            <ion-input type="text" placeholder="Logo" class="form-control input-text-custom" id="logo" name="logo" [(ngModel)]="school.logo" #schoolname="ngModel"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" placeholder="Background Image" class="form-control input-text-custom" id="backgroundImage" name="backgroundImage" [(ngModel)]="school.backgroundImage" #schoolname="ngModel"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" placeholder="Theme" class="form-control input-text-custom" id="theme" name="theme" [(ngModel)]="school.theme" #schoolname="ngModel"></ion-input>
+          </ion-item>
+          <ion-item>
             <ion-textarea placeholder="School Address" class="form-control input-text-custom" id="address" name="address" [(ngModel)]="school.address" #schoolname="ngModel" required></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-select placeholder="Select City" class="form-control input-text-custom" id="city" name="city" [(ngModel)]="school.city" #schoolname="ngModel" required>
+              <ion-select-option value="93">Bangalore</ion-select-option>
+              <ion-select-option value="355">Hyderabad	</ion-select-option>			
+              <ion-select-option value="213">Chennai	</ion-select-option>			
+              <ion-select-option value="1-684">Mumbai	</ion-select-option>	
+              <ion-select-option value="376">Delhi	</ion-select-option>			
+              <ion-select-option value="244">Bubhaneshwar		</ion-select-option>		
+              <ion-select-option value="1-264">Culcutta	</ion-select-option>	
+              <ion-select-option value="672">Ahmedabad	</ion-select-option>		
+              <ion-select-option value="1-268">Pune 	</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-select placeholder="Select State" class="form-control input-text-custom" id="state" name="state" [(ngModel)]="school.state" #schoolname="ngModel" required>
+              <ion-select-option value="93">Bangalore</ion-select-option>
+              <ion-select-option value="355">Hyderabad	</ion-select-option>			
+              <ion-select-option value="213">Chennai	</ion-select-option>			
+              <ion-select-option value="1-684">Mumbai	</ion-select-option>	
+              <ion-select-option value="376">Delhi	</ion-select-option>			
+              <ion-select-option value="244">Bubhaneshwar		</ion-select-option>		
+              <ion-select-option value="1-264">Culcutta	</ion-select-option>	
+              <ion-select-option value="672">Ahmedabad	</ion-select-option>		
+              <ion-select-option value="1-268">Pune 	</ion-select-option>
+            </ion-select>
           </ion-item>
           <ion-item>
             <ion-select placeholder="Select Country" class="form-control input-text-custom" id="country" name="country" [(ngModel)]="school.country" #schoolname="ngModel" required>
@@ -47,11 +82,33 @@
           </ion-item>
           <ion-item>
             <ion-icon item-left name="phone-portrait" ></ion-icon>
-            <ion-input type="text" placeholder="Mobile no" class="form-control input-text-custom" id="phone" name="phone" [(ngModel)]="school.phone" #schoolname="ngModel" required></ion-input>
+            <ion-input type="text" placeholder="Alternate Phone" class="form-control input-text-custom" id="alternatePhone" name="alternatePhone" [(ngModel)]="school.alternatePhone" #schoolname="ngModel"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-icon item-left name="phone-portrait" ></ion-icon>
+            <ion-input type="text" placeholder="Mobile no" class="form-control input-text-custom" id="phone" name="phone" [(ngModel)]="school.phone" #schoolname="ngModel"></ion-input>
           </ion-item>
           <ion-item>
             <ion-icon item-left name="mail" ></ion-icon>
-            <ion-input type="text" placeholder="Email Id" class="form-control input-text-custom" id="email" name="email" [(ngModel)]="school.email" #schoolname="ngModel" required></ion-input>
+            <ion-input type="text" placeholder="Email Id" class="form-control input-text-custom" id="email" name="email" [(ngModel)]="school.email" #schoolname="ngModel"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" placeholder="Website" class="form-control input-text-custom" id="website" name="website" [(ngModel)]="school.website" #schoolname="ngModel"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" placeholder="Active Academic Session" class="form-control input-text-custom" id="activeAcademicSession" name="activeAcademicSession" [(ngModel)]="school.activeAcademicSession" #schoolname="ngModel" ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" placeholder="Active Term" class="form-control input-text-custom" id="activeTerm" name="activeTerm" [(ngModel)]="school.activeTerm" #schoolname="ngModel"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" placeholder="Passout Class" class="form-control input-text-custom" id="passoutClass" name="passoutClass" [(ngModel)]="school.passoutClass" #schoolname="ngModel" ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" placeholder="Enable License" class="form-control input-text-custom" id="enableLicense" name="enableLicense" [(ngModel)]="school.enableLicense" #schoolname="ngModel"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="text" placeholder="Domain" class="form-control input-text-custom" id="domain" name="domain" [(ngModel)]="school.domain" #schoolname="ngModel"></ion-input>
           </ion-item>
         </ion-card-content>
         <ion-item>

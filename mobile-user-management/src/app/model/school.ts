@@ -2,7 +2,19 @@ export class School {
   name:string;
   id:string="";
   address:string="";
+  city:string="";
+  state:string="";
   country:string="";
   phone:string="";
   email:string="";
+  logo:string="";
+  backgroundImage:string="";
+  theme:string="";
+  alternatePhone:string="";
+  website:string="";
+  activeAcademicSession:string="";
+  activeTerm:string="";
+  passoutClass:string="";
+  enableLicense:string="";
+  domain:string="";
 }

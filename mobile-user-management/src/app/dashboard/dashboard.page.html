@@ -20,21 +20,21 @@
                 </button>
               </ion-col>
               <ion-col>
-                <button large class="btnblue">
+                <button large class="btnblue" [routerLink]="'/addstudent'" routerDirection="forward">
                   <ion-icon name="People" size="large"></ion-icon><br>
-                  <ion-label >Teaching Staff</ion-label>
+                  <ion-label >Add Student</ion-label>
                 </button>
               </ion-col>
               <ion-col>
-                <button large class="btnbrown">
+                <button large class="btnbrown" [routerLink]="'/schoolsettings'" routerDirection="forward">
                   <ion-icon size="large" name="People" ></ion-icon><br>
-                  <ion-label >Non-T Staff</ion-label>
+                  <ion-label >School Settings</ion-label>
                 </button>
               </ion-col>
               <ion-col>
-                <button large class="btnyellow">
+                <button large class="btnyellow" [routerLink]="'/studentsearch'" routerDirection="forward">
                   <ion-icon size="large" name="Bus"></ion-icon><br>
-                  <ion-label >School Transport</ion-label>
+                  <ion-label >Student Search</ion-label>
                 </button>
               </ion-col>
             </ion-row>

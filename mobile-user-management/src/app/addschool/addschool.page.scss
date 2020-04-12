@@ -4,3 +4,9 @@ ion-card {
 .bluecolor {
   --background: rgb(230, 227, 227);
 }
+.ion-text-color {
+  border-bottom-color: red($color: #000000);
+}
+.text-align-right {
+  text-align: right;
+}

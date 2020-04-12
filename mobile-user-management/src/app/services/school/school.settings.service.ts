@@ -36,4 +36,7 @@ export class SchoolSettingsService {
   findAllSchools(): Observable<any> {
     return this.http.get(API_URL + "/v1/school/all", {headers: this.headers});
   }
+  findSchool(): Observable<any> {
+    return this.http.get(API_URL + "/v1/school/pkId/12", {headers: this.headers});
+  }
 }

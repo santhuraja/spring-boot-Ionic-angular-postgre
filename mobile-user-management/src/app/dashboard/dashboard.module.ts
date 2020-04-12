@@ -2,10 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-import { NavController, NavParams } from '@ionic/angular';
 import { IonicModule } from '@ionic/angular';
 import { DashboardPage } from './dashboard.page';
-import { AddSchoolPage } from '../addschool/addschool.page';
 
 const routes: Routes = [
   {

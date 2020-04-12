@@ -23,8 +23,15 @@ export class SchoolSettingsPage implements OnInit {
       this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     }
   
+  
     ngOnInit() {
       this.menuController.enable(true);
+      this.findSchool();
+    }
+    findSchool() {
+        this.schoolSettingsService.findSchool().subscribe(data => {
+        this.school = data;
+      });
     }
   
     addSchool(){

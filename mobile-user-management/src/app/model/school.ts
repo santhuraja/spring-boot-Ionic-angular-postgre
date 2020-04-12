@@ -7,13 +7,13 @@ export class School {
   country:string="";
   phone:string="";
   email:string="";
-  logo:string="";
-  backgroundImage:string="";
+  logo:File;
+  backgroundImage:File;
   theme:string="";
   alternatePhone:string="";
   website:string="";
-  activeAcademicSession:string="";
-  activeTerm:string="";
+  activeAcademicSession:Date;
+  activeTerm:Date;
   passoutClass:string="";
   enableLicense:string="";
   domain:string="";

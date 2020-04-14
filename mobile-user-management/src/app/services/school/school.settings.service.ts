@@ -5,13 +5,13 @@ import {map} from 'rxjs/operators';
 import {School} from '../../model/school';
 import {User} from '../../model/user';
 
-let API_URL = "http://localhost:8080/api";
+let API_URL = "http://localhost:8080/api/v1/schools";
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class SchoolSettingsService {
+ export class SchoolSettingsService {
   currentUser: User;
   headers: HttpHeaders;
   constructor(private http: HttpClient) {
@@ -29,14 +29,14 @@ export class SchoolSettingsService {
     }));
   }
   
- addSchool(school: School): Observable<any> {
-    return this.http.post(API_URL + "/v1/school/add", JSON.stringify(school), {headers: this.headers});
+  addSchool(school: School): Observable<any> {
+    return this.http.post(API_URL + "/add", JSON.stringify(school), {headers: this.headers});
   }
 
   findAllSchools(): Observable<any> {
-    return this.http.get(API_URL + "/v1/school/all", {headers: this.headers});
+    return this.http.get(API_URL + "/all", {headers: this.headers});
   }
   findSchool(): Observable<any> {
-    return this.http.get(API_URL + "/v1/school/pkId/12", {headers: this.headers});
+    return this.http.get(API_URL + "/active", {headers: this.headers});
   }
 }

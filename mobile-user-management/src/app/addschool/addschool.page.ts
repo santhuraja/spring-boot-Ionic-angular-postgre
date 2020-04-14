@@ -6,6 +6,8 @@ import {User} from '../model/user';
 import {Router} from '@angular/router';
 import { Validators, FormBuilder, FormGroup,FormControl  } from '@angular/forms';
 import {MenuController, LoadingController, ToastController} from '@ionic/angular';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+
 
 @Component({
   selector: 'app-addschool',
@@ -20,11 +22,14 @@ export class AddSchoolPage implements OnInit {
   isDismiss = false;
   schoolForm : FormGroup;
   defaultDate = "1987-06-30";
-
+  fileUrl: any = null;
+  respData: any;
+  myPhoto: any;
+  imagePath:String="";
 
   constructor(private authService: AuthService,private addSchoolService: AddSchoolService, private router: Router,
     private menuController: MenuController, private loadingCtrl: LoadingController, private toastController: ToastController,
-    public formBuilder: FormBuilder) { 
+    public formBuilder: FormBuilder,private camera: Camera) { 
       this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
       this.schoolForm = formBuilder.group({
@@ -47,8 +52,26 @@ export class AddSchoolPage implements OnInit {
         email: new FormControl('',Validators.compose([Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')])),
         activeAcademicSession:new FormControl(this.defaultDate,Validators.compose([Validators.required]))
         });
-        
     }
+        
+ selectPhoto() {
+          const options: CameraOptions = {
+            quality: 100,
+            destinationType: this.camera.DestinationType.FILE_URI,
+            encodingType: this.camera.EncodingType.JPEG,
+            mediaType: this.camera.MediaType.PICTURE
+          }
+          
+          this.camera.getPicture(options).then((imageData) => {
+           // imageData is either a base64 encoded string or a file URI
+           // If it's base64 (DATA_URL):
+           this.imagePath = 'data:image/jpeg;base64,' + imageData;
+          }, (err) => {
+           // Handle error
+          });
+      
+      }
+
 
     get errorControl() {
       return this.schoolForm.controls;
@@ -58,16 +81,16 @@ export class AddSchoolPage implements OnInit {
       this.menuController.enable(true);
     }
   
-    addSchool(){
+    addSchool() {
+      this.errorMessage = '';
       if (this.schoolForm.valid) {
-        this.errorMessage = '';
         this.presentLoading();
         this.addSchoolService.addSchool(this.school).subscribe(data=> {
           this.successMessage();
           this.dismiss();
           //this.router.navigate(['/dashboard']);
-        },err => {
-          this.errorMessage = "Schoolname already exist";
+        },HttpResponse => {
+          this.errorMessage = HttpResponse.error.message;
           this.dismiss();
         });
       } else {
@@ -103,6 +126,7 @@ export class AddSchoolPage implements OnInit {
       }
     return await this.loader.dismiss().then(() => console.log('dismissed'));
     }
-  
 
+
+  
 }

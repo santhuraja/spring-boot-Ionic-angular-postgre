@@ -7,6 +7,10 @@ ion-card {
 .ion-text-color {
   border-bottom-color: red($color: #000000);
 }
-.text-align-right {
-  text-align: right;
+.fixedLabel {
+  min-width: 23% !important;
+  max-width: 23% !important;
+}
+.ion-input-back-color {
+   background-color:light;
 }

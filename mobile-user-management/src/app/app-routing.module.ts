@@ -39,6 +39,30 @@ const routes: Routes = [
     path: 'marks',
     loadChildren: './marks/marks.module#MarksPageModule'
   },
+  {
+    path: 'exam',
+    loadChildren: './exam/exam.module#ExamPageModule'
+  },
+  {
+    path: 'notice',
+    loadChildren: './notice/notice.module#NoticePageModule'
+  },
+  {
+    path: 'notice-view',
+    loadChildren: './notice-view/notice-view.module#NoticeViewPageModule'
+  },
+  {
+    path: 'attendance',
+    loadChildren: './attendance/attendance.module#AttendancePageModule'
+  },
+  {
+    path: 'routine',
+    loadChildren: './routine/routine.module#RoutinePageModule'
+  },
+  {
+    path: 'syllabus',
+    loadChildren: './syllabus/syllabus.module#SyllabusPageModule'
+  },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'detail', loadChildren: './detail/detail.module#DetailPageModule' },
@@ -48,7 +72,13 @@ const routes: Routes = [
   { path: 'addstudent', loadChildren: './addstudent/addstudent.module#AddStudentPageModule' },
   { path: 'schoolsettings', loadChildren: './schoolsettings/schoolsettings.module#SchoolSettingsPageModule' },
   { path: 'studentsearch', loadChildren: './studentsearch/studentsearch.module#StudentSearchPageModule' },
-  { path: 'marks', loadChildren: './marks/marks.module#MarksPageModule' }
+  { path: 'marks', loadChildren: './marks/marks.module#MarksPageModule' },
+  { path: 'exam', loadChildren: './exam/exam.module#ExamPageModule' },
+  { path: 'notice', loadChildren: './notice/notice.module#NoticePageModule' },
+  { path: 'notice-view', loadChildren: './notice-view/notice-view.module#NoticeViewPageModule' },
+  { path: 'attendance', loadChildren: './attendance/attendance.module#AttendancePageModule' },
+  { path: 'routine', loadChildren: './routine/routine.module#RoutinePageModule' },
+  { path: 'syllabus', loadChildren: './syllabus/syllabus.module#SyllabusPageModule' }
 ];
 
 @NgModule({

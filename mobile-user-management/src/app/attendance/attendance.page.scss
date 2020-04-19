@@ -1,0 +1,41 @@
+ion-card-header{
+    background: rgb(30,31,60);
+    ion-card-title{
+        color: #fff;
+        font-size: 20px;
+    }
+}
+.div_month{
+    display: flex;
+    flex-direction: row;
+    font-size: 17px;
+    .lbl_month{
+        min-width: 70px;
+        padding: 15px;
+        text-align: center;
+    }
+    .div_day{
+        padding: 5px 10px;
+        display: flex;
+        min-width: 60px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        ion-label{
+            padding: 10px;
+            font-size: 17px;
+        }
+    }
+    .w{
+        background: var(--ion-color-secondary);
+        color: #fff;
+    }
+    .p{
+        background: var(--ion-color-success);
+        color: #fff;
+    }
+    .a{
+        background: var(--ion-color-danger);
+        color: #fff;
+    }
+}

@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Student Attendance</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Day Attandance</ion-card-title>
+    </ion-card-header>
+    <div style="overflow-y: auto;">
+      <div class="div_month" *ngFor="let month of months">
+        <ion-label class="lbl_month">{{month.name}}</ion-label>
+        <div class="div_day" [class.w]="day == 'W'" [class.p]="day == 'P'" [class.a]="day == 'A'" *ngFor="let day of month.date">
+          <ion-label>{{day}}</ion-label>
+        </div>
+      </div>
+    </div>
+  </ion-card>
+
+</ion-content>

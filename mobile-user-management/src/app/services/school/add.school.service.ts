@@ -5,7 +5,7 @@ import {map} from 'rxjs/operators';
 import {School} from '../../model/school';
 import {User} from '../../model/user';
 
-let API_URL = "http://localhost:8080/api/v1/schools";
+let API_URL = "http://localhost:8080/api";
 
 @Injectable({
   providedIn: 'root'
@@ -30,10 +30,10 @@ export class AddSchoolService {
   }
   
  addSchool(school: School): Observable<any> {
-    return this.http.post(API_URL + "/add", JSON.stringify(school), {headers: this.headers});
+    return this.http.post(API_URL + "/v1/schools/add", JSON.stringify(school), {headers: this.headers});
   }
 
   findAllSchools(): Observable<any> {
-    return this.http.get(API_URL + "/all", {headers: this.headers});
+    return this.http.get(API_URL + "/v1/schools", {headers: this.headers});
   }
 }

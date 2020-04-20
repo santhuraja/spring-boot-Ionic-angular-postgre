@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-notice',
@@ -36,8 +36,13 @@ export class NoticePage implements OnInit {
   ngOnInit() {
   }
 
-  viewNotice(){
-    this.router.navigate(['/notice-view']);
+  viewNotice(notice){
+    let navParam: NavigationExtras = {
+      queryParams: {
+        notice: JSON.stringify(notice)
+      }
+    }
+    this.router.navigate(['/notice-view'], navParam);
   }
 
 }

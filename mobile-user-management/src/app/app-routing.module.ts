@@ -44,14 +44,6 @@ const routes: Routes = [
     loadChildren: './exam/exam.module#ExamPageModule'
   },
   {
-    path: 'notice',
-    loadChildren: './notice/notice.module#NoticePageModule'
-  },
-  {
-    path: 'notice-view',
-    loadChildren: './notice-view/notice-view.module#NoticeViewPageModule'
-  },
-  {
     path: 'attendance',
     loadChildren: './attendance/attendance.module#AttendancePageModule'
   },
@@ -62,6 +54,14 @@ const routes: Routes = [
   {
     path: 'syllabus',
     loadChildren: './syllabus/syllabus.module#SyllabusPageModule'
+  },
+  {
+    path: 'notice',
+    loadChildren: './notice/notice.module#NoticePageModule'
+  },
+  {
+    path: 'notice-view',
+    loadChildren: './notice-view/notice-view.module#NoticeViewPageModule'
   },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
@@ -74,11 +74,12 @@ const routes: Routes = [
   { path: 'studentsearch', loadChildren: './studentsearch/studentsearch.module#StudentSearchPageModule' },
   { path: 'marks', loadChildren: './marks/marks.module#MarksPageModule' },
   { path: 'exam', loadChildren: './exam/exam.module#ExamPageModule' },
-  { path: 'notice', loadChildren: './notice/notice.module#NoticePageModule' },
-  { path: 'notice-view', loadChildren: './notice-view/notice-view.module#NoticeViewPageModule' },
   { path: 'attendance', loadChildren: './attendance/attendance.module#AttendancePageModule' },
   { path: 'routine', loadChildren: './routine/routine.module#RoutinePageModule' },
-  { path: 'syllabus', loadChildren: './syllabus/syllabus.module#SyllabusPageModule' }
+  { path: 'syllabus', loadChildren: './syllabus/syllabus.module#SyllabusPageModule' },
+  { path: 'notice', loadChildren: './notice/notice.module#NoticePageModule' },
+  { path: 'notice-view', loadChildren: './notice-view/notice-view.module#NoticeViewPageModule' }
+
 ];
 
 @NgModule({

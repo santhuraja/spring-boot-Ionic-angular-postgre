@@ -1,5 +1,5 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
 
 import { NoticeViewPage } from './notice-view.page';
 
@@ -10,13 +10,16 @@ describe('NoticeViewPage', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ NoticeViewPage ],
-      imports: [IonicModule.forRoot()]
-    }).compileComponents();
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    })
+    .compileComponents();
+  }));
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(NoticeViewPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  }));
+  });
 
   it('should create', () => {
     expect(component).toBeTruthy();

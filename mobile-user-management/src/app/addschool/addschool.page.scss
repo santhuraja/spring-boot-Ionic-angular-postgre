@@ -1,5 +1,5 @@
-ion-card {
-  --background: url(../../assets/images/bg.png) no-repeat center/cover fixed;
+.background {
+  background: url(../../assets/images/bg.jpg) no-repeat center/cover fixed;
 }
 .bluecolor {
   --background: rgb(230, 227, 227);
@@ -7,10 +7,9 @@ ion-card {
 .ion-text-color {
   border-bottom-color: red($color: #000000);
 }
-.fixedLabel {
-  min-width: 23% !important;
-  max-width: 23% !important;
-}
 .ion-input-back-color {
    background-color:light;
+}
+ion-item {
+  --background: transparent!important;
 }

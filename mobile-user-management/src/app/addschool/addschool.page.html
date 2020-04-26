@@ -2,19 +2,19 @@
   <ion-label><strong>Error: </strong>{{errorMessage}}</ion-label>
 </ion-item>
 <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="primary">
       <ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
       <ion-title>
-        Add New School
+        <ion-text><strong>Add New School</strong></ion-text>
       </ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content class="background">
-       <ion-card class="bluecolor">
+       <ion-card color="primary">
         <ion-card-content >
-          <ion-text color="dark">
+          <ion-text>
             <h3>School Information</h3>
           </ion-text>
         </ion-card-content>
@@ -23,40 +23,40 @@
         <form [formGroup]="schoolForm" (ngSubmit)="addSchool()">
         <ion-card-content >
           <ion-item>
-            <ion-label color="medium" class="fixedLabel" title="School Name">Name</ion-label>
-            <ion-input type="text" class="ion-input-back-color" formControlName="name" [(ngModel)]="school.name"></ion-input>
-            <small *ngIf="schoolForm.get('name').hasError('required')" ><ion-text color="danger">Required!</ion-text></small>
-            <small *ngIf="schoolForm.get('name').hasError('minlength')"><ion-text color="danger">Minimum 4 chars</ion-text></small>
+            <ion-label color="primary" position="floating" title="School Name">Name</ion-label>
+            <ion-input type="text" class="ion-input-back-color" formControlName="name" [(ngModel)]="school.name"> </ion-input>
+            <small slot="end" *ngIf="schoolForm.get('name').hasError('required')" ><ion-text color="danger">Required!</ion-text></small>
+            <small slot="end" *ngIf="schoolForm.get('name').hasError('minlength')"><ion-text color="danger">Minimum 4 chars</ion-text></small>
           </ion-item>
           <ion-item>
-            <ion-label color="medium" class="fixedLabel">School Id</ion-label>
+            <ion-label color="primary" position="floating">School Id</ion-label>
             <ion-input type="text" class="form-control input-text-custom" formControlName= "id" [(ngModel)]="school.id"></ion-input>
-            <small *ngIf="schoolForm.get('id').hasError('required')" ><ion-text color="danger">Required!</ion-text></small>
-            <small *ngIf="schoolForm.get('id').hasError('minlength')"><ion-text color="danger">Minimum 4 chars</ion-text></small>
+            <small slot="end" *ngIf="schoolForm.get('id').hasError('required')" ><ion-text color="danger">Required!</ion-text></small>
+            <small slot="end" *ngIf="schoolForm.get('id').hasError('minlength')"><ion-text color="danger">Minimum 4 chars</ion-text></small>
           </ion-item>
           <ion-item>
-            <ion-button color="medium" size="small" (click)="selectPhoto()">Logo</ion-button>
-            <img [src] = "imagePath">
+            <ion-label color="primary" position="floating">Logo</ion-label>
+            <ion-input type="text">
+              
+            </ion-input>
           </ion-item>
           <ion-item>            
-            <ion-label color="medium" class="fixedLabel">Bg Image</ion-label>
-            <img *ngIf="!fileUrl" src=""/>
-            <img *ngIf="fileUrl" src="{{fileUrl}}" formControlName= "backgroundImage" [(ngModel)]="school.backgroundImage"/>
-            <ion-button color="medium" size="small">
-              <ion-icon slot="icon-only" name="camera"></ion-icon>
-            </ion-button>
+            <ion-label color="primary" position="floating">Background Image</ion-label>
+            <ion-input type="text">
+              
+            </ion-input>
           </ion-item>
           <ion-item>
-            <ion-label color="medium" class="fixedLabel">Theme</ion-label>
+            <ion-label color="primary" position="floating">Theme</ion-label>
             <ion-input type="text" class="form-control input-text-custom" [(ngModel)]="school.theme"  formControlName='theme' ></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label color="medium" class="fixedLabel">Address</ion-label>
+            <ion-label color="primary" position="floating">Address</ion-label>
             <ion-textarea class="form-control input-text-custom" [(ngModel)]="school.address" formControlName='address'  ></ion-textarea>
           </ion-item>
           <ion-item >
-            <ion-label color="medium" class="fixedLabel">City</ion-label>
-            <ion-select placeholder="Select City" class="form-control input-text-custom" formControlName='city' [(ngModel)]="school.city">
+            <ion-label color="primary" position="floating">City</ion-label>
+            <ion-select class="form-control input-text-custom" formControlName='city' [(ngModel)]="school.city">
               <ion-select-option value="93">Bangalore</ion-select-option>
               <ion-select-option value="355">Hyderabad	</ion-select-option>			
               <ion-select-option value="213">Chennai	</ion-select-option>			
@@ -70,8 +70,8 @@
             <small slot="end" *ngIf="schoolForm.get('city').hasError('required')"><ion-text color="danger">Required!</ion-text></small>
           </ion-item>
           <ion-item>
-            <ion-label color="medium" class="fixedLabel">State</ion-label>
-            <ion-select placeholder="Select State" class="form-control input-text-custom" [(ngModel)]="school.state" formControlName='state'>
+            <ion-label color="primary" position="floating">State</ion-label>
+            <ion-select class="form-control input-text-custom" [(ngModel)]="school.state" formControlName='state'>
               <ion-select-option value="93">Karnataka</ion-select-option>
               <ion-select-option value="355">Telangana	</ion-select-option>			
               <ion-select-option value="213">Tamilnadu	</ion-select-option>			
@@ -84,8 +84,8 @@
             </ion-select>
           </ion-item>
           <ion-item>
-            <ion-label color="medium" class="fixedLabel">Country</ion-label>
-            <ion-select placeholder="Select Country" class="form-control input-text-custom" [(ngModel)]="school.country" formControlName='country'>
+            <ion-label color="primary" position="floating">Country</ion-label>
+            <ion-select class="form-control input-text-custom" [(ngModel)]="school.country" formControlName='country'>
               <ion-select-option value="93">Afghanistan</ion-select-option>
               <ion-select-option value="355">Albania	</ion-select-option>			
               <ion-select-option value="213">Algeria	</ion-select-option>			
@@ -98,50 +98,56 @@
             </ion-select>
           </ion-item>
           <ion-item>
-            <ion-icon item-left name="phone-portrait" ></ion-icon>
+            <ion-label color="primary" position="floating">
+              <ion-icon item-left name="phone-portrait" ></ion-icon>Phone
+            </ion-label>
             <ion-input type="text" formControlName='phone' [(ngModel)]="school.phone"></ion-input>
-            <small *ngIf="schoolForm.get('phone').hasError('required')"><ion-text color="danger">Required!</ion-text></small>
-            <small *ngIf="schoolForm.get('email').hasError('minlength')"><ion-text color="danger">enter 10 digit number</ion-text></small>
+            <small slot="end" *ngIf="schoolForm.get('phone').hasError('required')"><ion-text color="danger">Required!</ion-text></small>
+            <small slot="end" *ngIf="schoolForm.get('email').hasError('minlength')"><ion-text color="danger">enter 10 digit number</ion-text></small>
           </ion-item>
           <ion-item>
-            <ion-icon item-left name="phone-portrait" ></ion-icon>
+            <ion-label color="primary" position="floating">
+              <ion-icon item-left name="phone-portrait" ></ion-icon>Alternat Phone
+            </ion-label>
             <ion-input type="text" class="form-control input-text-custom" [(ngModel)]="school.alternatePhone"  formControlName='alternatePhone'></ion-input>
           </ion-item>
           <ion-item>
-            <ion-icon item-left name="mail" ></ion-icon>
+            <ion-label color="primary" position="floating">
+              <ion-icon item-left name="mail" ></ion-icon>Email
+            </ion-label>            
             <ion-input type="text" class="form-control input-text-custom" formControlName='email' [(ngModel)]="school.email"></ion-input>
-            <small *ngIf="schoolForm.get('email').hasError('required')"><ion-text color="danger">Required!</ion-text></small>
-            <small *ngIf="schoolForm.get('email').hasError('pattern')"><ion-text color="danger">input example : abc@gmail.com</ion-text></small>
+            <small slot="end"  *ngIf="schoolForm.get('email').hasError('required')"><ion-text color="danger">Required!</ion-text></small>
+            <small slot="end"  *ngIf="schoolForm.get('email').hasError('pattern')"><ion-text color="danger">input example : abc@gmail.com</ion-text></small>
           </ion-item>
           <ion-item>
-            <ion-label color="medium" class="fixedLabel">Website</ion-label>
+            <ion-label color="primary" position="floating">Website</ion-label>
             <ion-input type="text" class="form-control input-text-custom" formControlName='website' [(ngModel)]="school.website"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label color="medium" class="fixedLabel">Active Academic Session</ion-label>
+            <ion-label color="primary" position="floating">Active Academic Session</ion-label>
             <ion-datetime datetime-left displayFormat="YYYY-MM-DD" class="form-control input-text-custom" formControlName='activeAcademicSession' [(ngModel)]="school.activeAcademicSession"></ion-datetime>
             <small slot="end" *ngIf="schoolForm.get('activeAcademicSession').hasError('required')"><ion-text color="danger" class="text-align-right">Required!</ion-text></small>
           </ion-item>
           <ion-item>
-            <ion-label color="medium" class="fixedLabel">Active Term</ion-label>
+            <ion-label color="primary" position="floating">Active Term</ion-label>
             <ion-input type="text" class="form-control input-text-custom" [(ngModel)]="school.activeTerm"  formControlName='activeTerm'></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label color="medium" class="fixedLabel">Passout Class</ion-label>
+            <ion-label color="primary" position="floating">Passout Class</ion-label>
             <ion-input type="text" class="form-control input-text-custom" [(ngModel)]="school.passoutClass" formControlName='passoutClass'></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label color="medium" class="fixedLabel">Enable License</ion-label>
+            <ion-label color="primary" position="floating">Enable License</ion-label>
             <ion-input type="text" class="form-control input-text-custom" [(ngModel)]="school.enableLicense" formControlName='enableLicense'></ion-input>
           </ion-item>
           <ion-item>
-            <ion-label color="medium" class="fixedLabel">Domain</ion-label>
+            <ion-label color="primary" position="floating">Domain</ion-label>
             <ion-input type="text" class="form-control input-text-custom" [(ngModel)]="school.domain" formControlName='domain'></ion-input>
           </ion-item>
         </ion-card-content>
         <ion-item>
-          <ion-button class="bluecolor" type="submit" expand="block"><ion-text color="dark" >Add New School</ion-text></ion-button>
-          <ion-button class="bluecolor" fill="clear" expand="block" [routerLink]="['/dashboard']" ><ion-text color="dark">Cancel</ion-text></ion-button>
+          <ion-button color="primary" type="submit" expand="block"><ion-text >Add New School</ion-text></ion-button>
+          <ion-button color="primary" type="submit" expand="block" [routerLink]="['/dashboard']" ><ion-text >Cancel</ion-text></ion-button>
         </ion-item>
       </form>
       </ion-card>

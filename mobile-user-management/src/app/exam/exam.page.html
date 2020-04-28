@@ -1,17 +1,17 @@
 <ion-header>
-  <ion-toolbar color="danger">
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-menu-button color="light"></ion-menu-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Exam Schedule</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="background">
   <ion-card *ngFor="let exam of exams" (click)="viewNotice(notice)">
-    <ion-card-header>
+    <ion-card-header color="primary">
       <ion-label>{{exam.title}}</ion-label>
-      <ion-label style="font-size: 17px;">Class: {{exam.class}}</ion-label>
+      <small>Class: {{exam.class}}</small>
     </ion-card-header>
     <ion-card-content>
       <ion-item>

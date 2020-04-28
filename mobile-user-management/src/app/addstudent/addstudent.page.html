@@ -2,7 +2,7 @@
   <ion-label><strong>Error: </strong>{{errorMessage}}</ion-label>
 </ion-item>
 <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="primary">
       <ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
@@ -13,9 +13,9 @@
   </ion-header>
  
   <ion-content class="background">
-       <ion-card class="bluecolor">
+       <ion-card color="primary">
         <ion-card-content >
-          <ion-text color="dark">
+          <ion-text>
             <h3>Student Information</h3>
           </ion-text>
         </ion-card-content>
@@ -23,8 +23,11 @@
       <ion-card>
         <form name="add-school" (ngSubmit)="f.form.valid && addSchool()" #f="ngForm" novalidate>
         <ion-card-content >
+          
           <ion-item>
-            <ion-input type="text" placeholder="Student Name" class="form-control input-text-custom" id="name" name="name" [(ngModel)]="school.name" #schoolname="ngModel" required></ion-input>
+            <ion-label color="primary" position="floating" title="Student Name">Student Name</ion-label>
+            <ion-input type="text" class="ion-input-back-color" id="name" name="name"  [(ngModel)]="school.name"> </ion-input>
+           
           </ion-item>
           <ion-item>
             <ion-input type="text" placeholder="Student Id" class="form-control input-text-custom" id="id" name="id" [(ngModel)]="school.id" #schoolname="ngModel" required></ion-input>
@@ -55,8 +58,8 @@
           </ion-item>
         </ion-card-content>
         <ion-item>
-          <ion-button class="bluecolor" type="submit" expand="block"><ion-text color="dark">Add Student</ion-text></ion-button>
-          <ion-button class="bluecolor" fill="clear" expand="block" [routerLink]="['/dashboard']" ><ion-text color="dark">Cancel</ion-text></ion-button>
+          <ion-button color="primary" type="submit" expand="block"><ion-text >Add Student</ion-text></ion-button>
+          <ion-button color="primary" type="submit" expand="block" [routerLink]="['/dashboard']" ><ion-text >Cancel</ion-text></ion-button>
         </ion-item>
       </form>
       </ion-card>

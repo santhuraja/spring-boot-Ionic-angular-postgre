@@ -21,3 +21,6 @@ ion-list.background{
 ion-item {
   --background: transparent!important;
 }
+ion-card.background {
+  --background: url(/assets/images/bg.jpg) no-repeat;
+}

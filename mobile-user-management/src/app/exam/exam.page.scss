@@ -5,24 +5,23 @@ ion-card{
             margin-right: 10px;
         }
         ion-label{
-            font-size: 22px;
-            color: var(--ion-color-dark);
+            font-size: 18px;
             display: block;
         }
     }
     ion-card-content{
         padding-top: 16px;
-        background: rgb(174,174,176);
+        background: transparent!important;
         padding: 0px;
         ion-item{
-            --background: rgb(174,174,176);
+            --background: transparent!important;
         }
         img{
             width: 50px;
             margin-right: 10px;
         }
         ion-label{
-            color: #fff;
+            color: "primary";
             font-size: 17px;
         }
     }

@@ -14,13 +14,13 @@
         <ion-label>{{sheet.semester}}</ion-label>
       </ion-col>
       <ion-col size="2" class="col_header">
-        <ion-label>Subject</ion-label>
+        <ion-label color="dark">Subject</ion-label>
       </ion-col>
       <ion-col size="5" class="col_header">
-        <ion-label>Exam</ion-label>
+        <ion-label color="dark">Exam</ion-label>
       </ion-col>
       <ion-col size="5" class="col_header">
-        <ion-label>Total</ion-label>
+        <ion-label color="dark">Total</ion-label>
       </ion-col>
       <ion-col size="2" class="col_header">
       </ion-col>
@@ -37,40 +37,40 @@
         <ion-label>Point</ion-label>
       </ion-col>
       <ion-col size="2" class="col_sub_header">
-        <ion-label>grade</ion-label>
+        <ion-label >grade</ion-label>
       </ion-col>
     </ion-row>
     <ion-row *ngFor="let mark of sheet.data">
       <ion-col size="2">
-        <ion-label>{{mark.subject}}</ion-label>
+        <ion-label color="dark">{{mark.subject}}</ion-label>
       </ion-col>
       <ion-col size="2.5">
-        <ion-label>{{mark.ob_mark}}</ion-label>
+        <ion-label color="dark">{{mark.ob_mark}}</ion-label>
       </ion-col>
       <ion-col size="2.5">
-        <ion-label>{{mark.hi_mark}}</ion-label>
+        <ion-label color="dark">{{mark.hi_mark}}</ion-label>
       </ion-col>
       <ion-col size="1.5">
-        <ion-label>{{mark.mark}}</ion-label>
+        <ion-label color="dark">{{mark.mark}}</ion-label>
       </ion-col>
       <ion-col size="1.5">
-        <ion-label>{{mark.point}}</ion-label>
+        <ion-label color="dark">{{mark.point}}</ion-label>
       </ion-col>
       <ion-col size="2">
-        <ion-label>{{mark.grade}}</ion-label>
+        <ion-label color="dark">{{mark.grade}}</ion-label>
       </ion-col>
     </ion-row>
     <ion-card-content>
-      <ion-label class="lbl_mark_info">
+      <ion-label color="dark">
         Total Marks: <b>350.00</b>
       </ion-label>
-      <ion-label>
+      <ion-label color="dark">
         Total Obtained Marks: <b>251.00</b>
       </ion-label>
-      <ion-label>
+      <ion-label color="dark">
         Total Average Marks(%): <b>71.00</b>
       </ion-label>
-      <ion-label>
+      <ion-label color="dark">
         GPA: <b>4.33</b>
       </ion-label>
     </ion-card-content>

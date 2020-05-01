@@ -1,0 +1,25 @@
+.logo_img{
+    margin: auto;
+    display: block;
+    margin-top: 10px;
+}
+ion-row{
+    border-bottom: 1px solid #d8d8d8;
+    margin: 10px;
+}
+ion-col{
+    margin: 10px 0px;
+    ion-label{
+        display: block;
+        margin: 5px 0px;
+    }
+}
+.col_right{
+    text-align: right;
+}
+.lbl_title{
+    font-size: 18px;
+    display: block;
+    text-align: center;
+    margin: 10px 0px;
+}

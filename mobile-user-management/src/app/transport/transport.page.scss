@@ -1,0 +1,8 @@
+.row_search{
+    position: absolute;
+    z-index: 999;
+    background: #fff;
+    ion-item{
+        --padding-start: 0px;
+    }
+}

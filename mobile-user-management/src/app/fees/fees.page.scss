@@ -1,0 +1,39 @@
+.div_header{
+    padding: 0px 10px;
+    margin: 10px 0px;
+    .div_flex_header{
+        display: flex;
+        justify-content: space-between;
+    }
+    .lbl_title{
+        font-size: 18px;
+        display: block;
+        margin-bottom: 10px;
+    }
+    span{
+        display: block;
+        margin-top: 10px;
+    }
+    .span_status{
+        padding: 5px;
+        color: white;
+        min-width: 55px;
+        display: block;
+        text-align: center;
+    }
+    .div_flex{
+        display: flex;
+        justify-content: space-between;
+        color: var(--ion-color-medium);
+        font-size: 15px;
+    }    
+}
+.p{
+    background-color: var(--ion-color-warning);
+}
+.u{
+    background-color: var(--ion-color-primary);
+}
+.pa{
+    background-color: var(--ion-color-success);
+}

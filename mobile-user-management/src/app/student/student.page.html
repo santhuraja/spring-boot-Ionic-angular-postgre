@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Student</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="light" (click)="showSearch=!showSearch">
+        <ion-icon md="search-sharp" ios="search-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <ion-card *ngIf="showSearch" class="row_search">
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="floating">Search</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="floating">Email Address</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item> 
+      </ion-col>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label>Gender</ion-label>
+          <ion-select value="male">
+            <ion-select-option value="male">Male</ion-select-option>
+            <ion-select-option value="female">Female</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label>Class</ion-label>
+          <ion-select value="class1" multiple="true">
+            <ion-select-option value="class1">Class 1</ion-select-option>
+            <ion-select-option value="class2">Class 2</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label>Section Name</ion-label>
+          <ion-select value="section1" multiple="true">
+            <ion-select-option value="section1">A-section 1</ion-select-option>
+            <ion-select-option value="section2">B-section 2</ion-select-option>
+            <ion-select-option value="section3">C-section 3</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label>Student Categories</ion-label>
+          <ion-select value="category1" multiple="true">
+            <ion-select-option value="category1">Category 1</ion-select-option>
+            <ion-select-option value="category2">Catgeroy 2</ion-select-option>
+            <ion-select-option value="category3">Categroy 3</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-button size="full" (click)="showSearch=!showSearch">Advance Search</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-list class="student_list">
+    <ion-item *ngFor="let student of students">
+      <ion-avatar slot="start">
+        <img src="../../assets/images/user.png" />
+        <!-- <ion-icon md="person-circle-sharp" ios="person-circle-outline"></ion-icon> -->
+      </ion-avatar>
+      <ion-label>
+        {{student.name}}<br>
+        {{student.email}}<br>
+        <ion-text color="medium">{{student.class}}/{{student.section}}</ion-text>
+      </ion-label>
+      <ion-button slot="end" fill="clear" size="medium" (click)="goToInfo()">
+        <ion-icon color="primary" name="arrow-dropright-circle"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

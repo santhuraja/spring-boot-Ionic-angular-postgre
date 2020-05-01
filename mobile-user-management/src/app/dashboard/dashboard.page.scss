@@ -59,5 +59,7 @@
           padding: 5px;
       }
   }
-
+  ion-title {
+    --background: transparent!important;
+  }
 }

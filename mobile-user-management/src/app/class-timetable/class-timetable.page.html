@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Class Timetable</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <div class="div_header">
+    <ion-icon name="chevron-back-outline"></ion-icon>
+    <ion-label>STD: Six-A</ion-label>
+    <ion-icon name="chevron-forward-outline"></ion-icon>
+  </div>
+  <ion-segment value="mon" (ionChange)="segmentChanged($event)" color="danger" mode="ios">
+    <ion-segment-button value="sun">
+      <ion-label>Sun</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="mon">
+      <ion-label>Mon</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="tue">
+      <ion-label>Tue</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="wed">
+      <ion-label>Wed</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="thu">
+      <ion-label>Thu</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="fri">
+      <ion-label>Fri</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="sat">
+      <ion-label>Sat</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div class="div_timetable">
+    <ion-item *ngFor="let sub of timeTable">
+      <ion-thumbnail slot="start" [ngStyle]="{'background-color':sub.color}">
+        <ion-label color="light">{{sub.code}}</ion-label>
+      </ion-thumbnail>
+      <ion-text>{{sub.subject}}<br>
+        <span><ion-icon name="time-outline"></ion-icon>{{sub.time}}</span>
+      </ion-text>
+    </ion-item>
+  </div>
+</ion-content>

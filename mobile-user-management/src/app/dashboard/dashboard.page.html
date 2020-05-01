@@ -8,90 +8,34 @@
       </ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content class="background">
-       <ion-card>
-        <ion-card-content>
-          <ion-grid>
-            <ion-row>
-              <ion-col>
-                <button large class="btncolor" [routerLink]="'/addschool'" routerDirection="forward">
-                  <ion-icon name="School" size="large"></ion-icon><br>
-                  <ion-label >Add School</ion-label>
-                </button>
-              </ion-col>
-              <ion-col>
-                <button large class="btnblue" [routerLink]="'/addstudent'" routerDirection="forward">
-                  <ion-icon name="People" size="large"></ion-icon><br>
-                  <ion-label >Add Student</ion-label>
-                </button>
-              </ion-col>
-              <ion-col>
-                <button large class="btnbrown" [routerLink]="'/schoolsettings'" routerDirection="forward">
-                  <ion-icon size="large" name="People" ></ion-icon><br>
-                  <ion-label >School Settings</ion-label>
-                </button>
-              </ion-col>
-              <ion-col>
-                <button large class="btnyellow" [routerLink]="'/studentsearch'" routerDirection="forward">
-                  <ion-icon size="large" name="Bus"></ion-icon><br>
-                  <ion-label >Student Search</ion-label>
-                </button>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col>
-                <button large class="btngrey" [routerLink]="'/marks'" routerDirection="forward">
-                  <ion-icon size="large" name="Navigate"></ion-icon><br>
-                  <ion-label >Marks</ion-label>
-                </button>
-              </ion-col>
-              <ion-col>
-                <button large class="btngrey" [routerLink]="'/exam'" routerDirection="forward">
-                  <ion-icon name="People" size="large"></ion-icon><br>
-                  <ion-label >Exam Dates</ion-label>
-                </button>
-              </ion-col>
-              <ion-col>
-                <button large class="btngrey" [routerLink]="'/notice'" routerDirection="forward">
-                  <ion-icon size="large" name="People" ></ion-icon><br>
-                  <ion-label >Notice</ion-label>
-                </button>
-              </ion-col>
-              <ion-col>
-                <button large class="btngrey" [routerLink]="'/routine'" routerDirection="forward">
-                  <ion-icon size="large" name="Bus"></ion-icon><br>
-                  <ion-label >Routine</ion-label>
-                </button>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col>
-                <button large class="btngrey" [routerLink]="'/syllabus'" routerDirection="forward">
-                  <ion-icon size="large" name="Navigate"></ion-icon><br>
-                  <ion-label >Syllabus</ion-label>
-                </button>
-              </ion-col>
-              <ion-col>
-                <button large class="btngrey" [routerLink]="'/attendance'" routerDirection="forward">
-                  <ion-icon name="People" size="large"></ion-icon><br>
-                  <ion-label >Attendance</ion-label>
-                </button>
-              </ion-col>
-              <ion-col>
-                <button large class="btnbrown">
-                  <ion-icon size="large" name="People" ></ion-icon><br>
-                  <ion-label >Non-T Staff</ion-label>
-                </button>
-              </ion-col>
-              <ion-col>
-                <button large class="btncolor">
-                  <ion-icon size="large" name="Bus"></ion-icon><br>
-                  <ion-label >School Transport</ion-label>
-                </button>
-              </ion-col>
-            </ion-row>
-        </ion-grid>
-        </ion-card-content>
-      </ion-card>
+
+  <ion-content class="background"> 
+    <ion-row>
+      <ion-col size="4" *ngFor="let page of appPages">
+        <ion-card class="card_dashboard" routerDirection="root" [routerLink]="[page.url]">
+          <ion-card-content>
+            <ion-icon size="large" [name]="page.icon" color="primary" ></ion-icon>
+            <ion-label color="primary">{{page.title}}</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row class="notice_row">
+      <ion-col size="12">
+        <ion-label class="label_title">Noticeboard</ion-label>
+        <ion-card>
+          <ion-toolbar>
+            <ion-title color="primary">Lockdown notice</ion-title>
+          </ion-toolbar>
+          <ion-label>Dear student,<br>
+            Because of COVID-19 our institue will remain close till ferther notice.<br>
+            thanks,<br>
+            principal 
+          </ion-label>
+          <ion-label>Date: 01/04/2020</ion-label>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  
   </ion-content>
   

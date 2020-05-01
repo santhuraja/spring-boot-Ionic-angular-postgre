@@ -12,6 +12,85 @@ import {MenuController} from '@ionic/angular';
 export class DashboardPage implements OnInit {
   currentUser: User;
 
+  appPages=[
+    {
+      title: 'Add School',
+      url: '/addschool',
+      icon: 'school'
+    },
+    {
+      title: 'Add Student',
+      url: '/addstudent',
+      icon: 'person-add'
+    },
+    {
+      title: 'School Settings',
+      url: '/schoolsettings',
+      icon: 'school'
+    },
+    {
+      title: 'Dashboard',
+      url: '/dashboard',
+      icon: 'home'
+    },
+    {
+      title: 'Attendance Sheet',
+      url: '/attendance',
+      icon: 'calendar'
+    },
+    {
+      title: 'Marks',
+      url: '/marks',
+      icon: 'document'
+    },
+    {
+      title: 'Exam Dates',
+      url: '/exam',
+      icon: 'paper'
+    },
+    {
+      title: 'Fees',
+      url: '/fees',
+      icon: 'copy',
+      color: 'danger'
+    },
+    {
+      title: 'Routine',
+      url: '/routine',
+      icon: 'alarm'
+    },
+    {
+      title: 'Exam Result',
+      url: '/exam-result',
+      icon: 'book'
+    },
+    {
+      title: 'Student',
+      url: '/student',
+      icon: 'people'
+    },
+    {
+      title: 'Downloads',
+      url: '/download',
+      icon: 'download'
+    },
+    {
+      title: 'Notice',
+      url: '/notice',
+      icon: 'notifications'
+    },
+    {
+      title: 'Class Timetable',
+      url: '/class-timetable',
+      icon: 'calendar'
+    },
+    {
+      title: 'Syllabus',
+      url: '/syllabus',
+      icon: 'book'
+    }
+  ]
+
   constructor(private authService: AuthService, private router: Router,
   private menu: MenuController) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));

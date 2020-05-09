@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
-import {School} from '../../model/school';
+import {Student} from '../../model/student';
 import {User} from '../../model/user';
 
-let API_URL = "http://localhost:8080/api";
+let API_URL = "http://192.168.56.1:8080/api";
 
 @Injectable({
   providedIn: 'root'
@@ -29,11 +29,9 @@ export class AddStudentService {
     }));
   }
   
- addSchool(school: School): Observable<any> {
-    return this.http.post(API_URL + "/v1/schools/add", JSON.stringify(school), {headers: this.headers});
+ addStudent(student: Student): Observable<any> {
+    return this.http.post(API_URL + "/v1/students/add", JSON.stringify(student), {headers: this.headers});
   }
 
-  findAllSchools(): Observable<any> {
-    return this.http.get(API_URL + "/v1/schools", {headers: this.headers});
-  }
+
 }

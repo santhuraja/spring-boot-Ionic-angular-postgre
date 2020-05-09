@@ -35,10 +35,10 @@
             <small slot="end" *ngIf="schoolForm.get('id').hasError('minlength')"><ion-text color="danger">Minimum 4 chars</ion-text></small>
           </ion-item>
           <ion-item>
-            <ion-label color="primary" position="floating">Logo</ion-label>
-            <ion-input type="text">
-              
-            </ion-input>
+            <ion-label slot="start" color="primary">Logo</ion-label>
+              <ion-button slot="end" (click)="openCamera()">
+                  <ion-icon name="camera"></ion-icon>
+              </ion-button>
           </ion-item>
           <ion-item>            
             <ion-label color="primary" position="floating">Background Image</ion-label>

@@ -21,40 +21,52 @@
         </ion-card-content>
       </ion-card>
       <ion-card>
-        <form name="add-school" (ngSubmit)="f.form.valid && addSchool()" #f="ngForm" novalidate>
+        <form name="add-student" (ngSubmit)="f.form.valid && addStudent()" #f="ngForm" novalidate>
         <ion-card-content >
           
           <ion-item>
             <ion-label color="primary" position="floating" title="Student Name">Student Name</ion-label>
-            <ion-input type="text" class="ion-input-back-color" id="name" name="name"  [(ngModel)]="school.name"> </ion-input>
-           
+            <ion-input type="text" class="ion-input-back-color" id="name" name="name"  [(ngModel)]="student.name"> </ion-input>
           </ion-item>
           <ion-item>
-            <ion-input type="text" placeholder="Student Id" class="form-control input-text-custom" id="id" name="id" [(ngModel)]="school.id" #schoolname="ngModel" required></ion-input>
+            <ion-label color="primary" position="floating" title="Student Id">Student Id</ion-label>
+            <ion-input type="number" class="form-control input-text-custom" id="id" name="id" [(ngModel)]="student.id"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-textarea placeholder="Student Address" class="form-control input-text-custom" id="address" name="address" [(ngModel)]="school.address" #schoolname="ngModel" required></ion-textarea>
+            <ion-label color="primary" position="floating" title="Hostel Id">Hostel Id</ion-label>
+            <ion-input type="number" class="form-control input-text-custom" id="hostelId" name="hostelId" [(ngModel)]="student.hostelId"  ></ion-input>
           </ion-item>
           <ion-item>
-            <ion-select placeholder="Select Country" class="form-control input-text-custom" id="country" name="country" [(ngModel)]="school.country" #schoolname="ngModel" required>
-              <ion-select-option value="93">Afghanistan</ion-select-option>
-              <ion-select-option value="355">Albania	</ion-select-option>			
-              <ion-select-option value="213">Algeria	</ion-select-option>			
-              <ion-select-option value="1-684">American	</ion-select-option>	
-              <ion-select-option value="376">Andorra	</ion-select-option>			
-              <ion-select-option value="244">Angola		</ion-select-option>		
-              <ion-select-option value="1-264">Anguilla	</ion-select-option>	
-              <ion-select-option value="672">Antarctica	</ion-select-option>		
-              <ion-select-option value="1-268">Antigua 	</ion-select-option>
+            <ion-label color="primary" position="floating" title="School Id">School Id</ion-label>
+            <ion-input type="number" class="form-control input-text-custom" id="schoolId" name="schoolId" [(ngModel)]="student.schoolId"  ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" position="floating" title="Parent Id">Parent Id</ion-label>
+            <ion-input type="number" class="form-control input-text-custom" id="parentId" name="parentId" [(ngModel)]="student.parentId"  ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" position="floating">Gender</ion-label>
+            <ion-select class="form-control input-text-custom" id="studentGender" name="studentGender" [(ngModel)]="student.studentGender"  >
+              <ion-select-option value="Male">Male</ion-select-option>
+              <ion-select-option value="Female">Female	</ion-select-option>			
             </ion-select>
           </ion-item>
           <ion-item>
-            <ion-icon item-left name="phone-portrait" ></ion-icon>
-            <ion-input type="text" placeholder="Mobile no" class="form-control input-text-custom" id="phone" name="phone" [(ngModel)]="school.phone" #schoolname="ngModel" required></ion-input>
+            <ion-label color="primary" position="floating">Address</ion-label>
+            <ion-textarea class="form-control input-text-custom" id="address" name="address" [(ngModel)]="student.address"  ></ion-textarea>
           </ion-item>
           <ion-item>
-            <ion-icon item-left name="mail" ></ion-icon>
-            <ion-input type="text" placeholder="Email Id" class="form-control input-text-custom" id="email" name="email" [(ngModel)]="school.email" #schoolname="ngModel" required></ion-input>
+            <ion-label color="primary" position="floating" title="Student Class">Student Class</ion-label>
+            <ion-input type="number" class="form-control input-text-custom" id="studentClass" name="studentClass" [(ngModel)]="student.studentClass"  ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" position="floating" title="Admission Id">Admission Id</ion-label>
+            <ion-input type="text" class="form-control input-text-custom" id="studentAdmissionId" name="studentAdmissionId" [(ngModel)]="student.studentAdmissionId"  ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" position="floating">Admission Year</ion-label>
+            <ion-datetime datetime-left displayFormat="YYYY-MM-DD" class="form-control input-text-custom" name="studentAdmissionYear" [(ngModel)]="student.studentAdmissionYear"></ion-datetime>
+            
           </ion-item>
         </ion-card-content>
         <ion-item>

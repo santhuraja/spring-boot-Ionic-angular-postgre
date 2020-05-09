@@ -26,6 +26,8 @@ export class AddSchoolPage implements OnInit {
   respData: any;
   myPhoto: any;
   imagePath:String="";
+  image;
+  imageData;
 
   constructor(private authService: AuthService,private addSchoolService: AddSchoolService, private router: Router,
     private menuController: MenuController, private loadingCtrl: LoadingController, private toastController: ToastController,
@@ -54,25 +56,24 @@ export class AddSchoolPage implements OnInit {
         });
     }
         
- selectPhoto() {
-          const options: CameraOptions = {
-            quality: 100,
-            destinationType: this.camera.DestinationType.FILE_URI,
-            encodingType: this.camera.EncodingType.JPEG,
-            mediaType: this.camera.MediaType.PICTURE
-          }
-          
-          this.camera.getPicture(options).then((imageData) => {
-           // imageData is either a base64 encoded string or a file URI
-           // If it's base64 (DATA_URL):
-           this.imagePath = 'data:image/jpeg;base64,' + imageData;
-          }, (err) => {
+
+      openCamera(){
+        const options: CameraOptions = {
+        quality: 100,
+        destinationType: this.camera.DestinationType.DATA_URL,
+        encodingType: this.camera.EncodingType.JPEG,
+        mediaType: this.camera.MediaType.PICTURE,
+       }
+    
+        this.camera.getPicture(options).then((imageData) => {
+        this.imageData = imageData;
+        this.image=(<any>window).Ionic.WebView.convertFileSrc(imageData);
+        }, (err) => {
            // Handle error
-          });
-      
-      }
-
-
+           alert("error "+JSON.stringify(err))
+      });
+    }
+    
     get errorControl() {
       return this.schoolForm.controls;
     }
@@ -127,6 +128,32 @@ export class AddSchoolPage implements OnInit {
     return await this.loader.dismiss().then(() => console.log('dismissed'));
     }
 
+    upload(){
+      let  url = 'your REST API url';
+      const date = new Date().valueOf();
+  
+      // Replace extension according to your media type
+      const imageName = date+ '.jpeg';
+      // call method that creates a blob from dataUri
+      const imageBlob = this.dataURItoBlob(this.imageData);
+      const imageFile = new File([imageBlob], imageName, { type: 'image/jpeg' })
+  
+      let  postData = new FormData();
+      postData.append('file', imageFile);
 
+    }
+  
+    dataURItoBlob(dataURI) {
+      const byteString = window.atob(dataURI);
+     const arrayBuffer = new ArrayBuffer(byteString.length);
+      const int8Array = new Uint8Array(arrayBuffer);
+      for (let i = 0; i < byteString.length; i++) {
+        int8Array[i] = byteString.charCodeAt(i);
+       }
+      const blob = new Blob([int8Array], { type: 'image/jpeg' });    
+     return blob;
+    }
+  
+    
   
 }

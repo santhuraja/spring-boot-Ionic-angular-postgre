@@ -5,7 +5,7 @@ import {map} from 'rxjs/operators';
 import {User} from '../model/user';
 import {School} from '../model/school';
 
-let API_URL = "http://localhost:8080/api";
+let API_URL = "http://192.168.56.1:8080/api";
 
 @Injectable({
   providedIn: 'root'

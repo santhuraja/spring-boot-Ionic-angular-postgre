@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AddStudentService } from '../services/school/add.student.service';
 import { AuthService } from '../services/auth.service';
-import {School} from '../model/school';
+import {Student} from '../model/student';
 import {User} from '../model/user';
 import {Router} from '@angular/router';
-import {MenuController, LoadingController} from '@ionic/angular';
+import {MenuController, LoadingController, ToastController} from '@ionic/angular';
+
 
 @Component({
   selector: 'app-addstudent',
@@ -13,13 +14,13 @@ import {MenuController, LoadingController} from '@ionic/angular';
 })
 export class AddStudentPage implements OnInit {
   currentUser: User;
-  school: School = new School();
+  student: Student = new Student();
   errorMessage: string;
   loader: any;
   isDismiss = false;
 
   constructor(private authService: AuthService,private addStudentService: AddStudentService, private router: Router,
-    private menuController: MenuController, private loadingCtrl: LoadingController) { 
+    private menuController: MenuController, private loadingCtrl: LoadingController,private toastController: ToastController) { 
       this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     }
   
@@ -27,17 +28,27 @@ export class AddStudentPage implements OnInit {
       this.menuController.enable(true);
     }
   
-    addSchool(){
+    addStudent(){
       this.presentLoading();
-      this.addStudentService.addSchool(this.school).subscribe(data=> {
-        this.dismiss();
-        //this.router.navigate(['/dashboard']);
-      },err => {
-        this.errorMessage = "Schoolname already exist";
-        this.dismiss();
-      });
+        this.addStudentService.addStudent(this.student).subscribe(data=> {
+          this.successMessage();
+          this.dismiss();
+          //this.router.navigate(['/dashboard']);
+        },HttpResponse => {
+          this.errorMessage = HttpResponse.error.message;
+          this.dismiss();
+        });
     }
-  
+    async successMessage() {
+      const toast = await this.toastController.create({
+        message: 'School saved successfully',
+        position: 'top',
+        cssClass: 'toast-success',
+        color:"success",
+        duration: 3000
+      });
+      toast.present();
+    }
     async presentLoading() {
       this.loader = await this.loadingCtrl.create({
         message: 'Please wait...'

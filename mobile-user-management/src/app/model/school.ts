@@ -8,7 +8,7 @@ export class School {
   phone:string="";
   email:string="";
 
-  backgroundImage:File;
+  backgroundImage:File; 
   theme:string="";
   alternatePhone:string="";
   website:string="";

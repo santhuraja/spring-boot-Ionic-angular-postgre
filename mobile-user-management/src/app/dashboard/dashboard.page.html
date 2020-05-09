@@ -11,7 +11,7 @@
 
   <ion-content class="background"> 
     <ion-row>
-      <ion-col size="4" *ngFor="let page of appPages | async" col-12 col-xl-2 col-lg-3 col-md-4>
+      <ion-col size="4" *ngFor="let page of appPages" col-12 col-xl-2 col-lg-3 col-md-4>
         <ion-card class="card_dashboard" routerDirection="root" [routerLink]="[page.url]">
           <ion-card-content>
             <ion-icon size="large" [name]="page.icon" color="primary" ></ion-icon>

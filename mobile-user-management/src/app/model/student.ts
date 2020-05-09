@@ -1,10 +1,10 @@
 export class Student {
-  name:string;
-  id:number;
+  studentName:string;
+  studentId:number;
   parentId:number;
   hostelId:number;
   schoolId:number;
-  address:string;
+  studentAddress:string;
   studentGender:string;
   studentAdmissionId:number;
   studentAdmissionYear:Date;

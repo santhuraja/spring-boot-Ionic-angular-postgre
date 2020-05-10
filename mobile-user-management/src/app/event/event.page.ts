@@ -1,16 +1,14 @@
-import { CalendarComponent  } from 'ionic2-calendar/calendar';
-
-
+import { CalendarComponent } from 'ionic2-calendar/calendar';
 import { Component, ViewChild, OnInit, Inject, LOCALE_ID } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { formatDate } from '@angular/common';
 
 @Component({
-  selector: 'app-attendance',
-  templateUrl: './attendance.page.html',
-  styleUrls: ['./attendance.page.scss'],
+  selector: 'app-event',
+  templateUrl: './event.page.html',
+  styleUrls: ['./event.page.scss'],
 })
-export class AttendancePage implements OnInit {
+export class EventPage implements OnInit {
  
   event = {
     title: '',
@@ -84,7 +82,6 @@ export class AttendancePage implements OnInit {
   // Change between month/week/day
   changeMode(mode) {
     this.calendar.mode = mode;
-    
   }
    
   // Focus today

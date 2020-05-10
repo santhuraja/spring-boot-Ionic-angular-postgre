@@ -17,10 +17,10 @@
   </div>
 </ion-header>
 
-<ion-content>
+<ion-content class="background">
   <div class="div_header" *ngFor="let f of fees">
     <div class="div_flex_header">  
-      <ion-label class="lbl_title" color="tertiary">{{f.title}}</ion-label>
+      <ion-label class="lbl_title" color="primary">{{f.title}}</ion-label>
       <ion-button fill="clear" color="primary" size="small" mode="md" (click)="viewInvoice()"><ion-icon name="eye"></ion-icon></ion-button>
     </div>
     <div class="div_flex">

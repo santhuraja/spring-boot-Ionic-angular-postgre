@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'detail', loadChildren: './detail/detail.module#DetailPageModule' },
   { path: 'detail/:id', loadChildren: './detail/detail.module#DetailPageModule' },
-  { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardPageModule' },
+  { path: 'event', loadChildren: './event/event.module#EventPageModule' },
   { path: 'addschool', loadChildren: './addschool/addschool.module#AddSchoolPageModule' },
   { path: 'addstudent', loadChildren: './addstudent/addstudent.module#AddStudentPageModule' },
   { path: 'schoolsettings', loadChildren: './schoolsettings/schoolsettings.module#SchoolSettingsPageModule' },

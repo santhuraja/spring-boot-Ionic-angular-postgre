@@ -6,7 +6,7 @@
     <ion-title>Syllabus</ion-title>
   </ion-toolbar>
 
-  <ion-select placeholder="class" color="primary">
+  <ion-select placeholder="class">
     <ion-select-option>Math</ion-select-option>
   </ion-select>
 </ion-header>
@@ -14,8 +14,8 @@
 <ion-content class="background">
   <ion-card *ngFor="let syllabus of syllabuses" (click)="viewNotice(notice)">
     <ion-card-header>
-        <ion-label>{{syllabus.title}}</ion-label>
-        <ion-button color="warning" mode="md"><ion-icon name="cloud-download-outline" color="light"></ion-icon></ion-button>
+        <ion-label><ion-text color="primary">{{syllabus.title}}</ion-text></ion-label>
+        <ion-button color="primary" mode="md"><ion-icon name="cloud-download" color="light"></ion-icon></ion-button>
     </ion-card-header>
     <ion-card-content>
       <ion-item>

@@ -26,12 +26,12 @@ export class DashboardPage implements OnInit {
     {
       title: 'School Settings',
       url: '/schoolsettings',
-      icon: 'school'
+      icon: 'settings'
     },
     {
-      title: 'Dashboard',
-      url: '/dashboard',
-      icon: 'home'
+      title: 'Event',
+      url: '/event',
+      icon: 'globe'
     },
     {
       title: 'Attendance Sheet',

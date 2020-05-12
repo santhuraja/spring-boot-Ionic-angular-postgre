@@ -3,6 +3,8 @@ import { AuthService } from '../services/auth.service';
 import {User} from '../model/user';
 import {Router} from '@angular/router';
 import {MenuController} from '@ionic/angular';
+import { KeycloakProfile } from 'keycloak-js';
+import { KeycloakService } from 'keycloak-angular';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +12,7 @@ import {MenuController} from '@ionic/angular';
   styleUrls: ['dashboard.page.scss'],
 })
 export class DashboardPage implements OnInit {
-  currentUser: User;
+  userDetails: KeycloakProfile;
 
   appPages=[
     {
@@ -91,21 +93,35 @@ export class DashboardPage implements OnInit {
     }
   ]
 
-  constructor(private authService: AuthService, private router: Router,
-  private menu: MenuController) {
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+  constructor(private keycloakService: KeycloakService, private authService: AuthService
+    , private menu: MenuController) { }
+
+  async ngOnInit() {
+    this.menu.enable(true);
+    console.log("keyserv " + this.keycloakService)
+    if (await this.keycloakService.isLoggedIn()) {
+      console.log("before " + this.userDetails)
+      this.userDetails = await this.keycloakService.loadUserProfile();
+      console.log("after " + this.userDetails)
+      console.log("after " + this.userDetails.username)
+      //this.isAdmin = this.authService.getRoles('admin');
+      //this.isEmployee = this.authService.getRoles('employee');
+    }
   }
 
-  ngOnInit() {
-      this.menu.enable(true);
-  }
+  
 
-  logOut(){
-    this.authService.logOut().subscribe(data => {
-      this.router.navigate(['/login']);
-    },err => {
+  // logOut(){
+  //   this.authService.logOut().subscribe(data => {
+  //     this.router.navigate(['/login']);
+  //   },err => {
 
-    });
+  //   });
+  // }
+
+  async doLogout() {
+    await this.keycloakService.logout();
   }
 
 }

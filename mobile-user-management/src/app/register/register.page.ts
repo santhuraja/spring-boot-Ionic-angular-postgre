@@ -22,21 +22,21 @@ export class RegisterPage implements OnInit {
     this.menuController.enable(false);
   }
 
-  register(){
-    this.presentLoading();
-    this.authService.register(this.user).subscribe(data=> {
-      this.dismiss();
-      this.router.navigate(['/login']);
-    },err => {
-	 if (err && err.status === 409) {
-		this.errorMessage = "Username / Password is not valid.";
-	 } else {
-	  console.log(err);
-      this.errorMessage = "Unexpected error occurred.";
-      this.dismiss();	 
-	 }
-    });
-  }
+  // register(){
+  //   this.presentLoading();
+  //   this.authService.register(this.user).subscribe(data=> {
+  //     this.dismiss();
+  //     this.router.navigate(['/login']);
+  //   },err => {
+	//  if (err && err.status === 409) {
+	// 	this.errorMessage = "Username / Password is not valid.";
+	//  } else {
+	//   console.log(err);
+  //     this.errorMessage = "Unexpected error occurred.";
+  //     this.dismiss();	 
+	//  }
+  //   });
+  // }
 
   async presentLoading() {
     this.loader = await this.loadingCtrl.create({

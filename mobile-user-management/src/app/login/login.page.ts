@@ -23,23 +23,23 @@ export class LoginPage implements OnInit {
       this.menu.enable(false);
   }
 
-  login(){
-    this.presentLoading();
-    this.authService.login(this.user).subscribe(data => {
-      this.dismiss();
-      this.router.navigate(['/home']);
-    },err =>{
-      if (err && err.status === 401) {
-        this.errorMessage = "Username or password is incorrect";
-  	  } else if (err && err.status === 409) {
-        this.errorMessage = "Username / Password is not valid";
-      } else {
-  	    console.log(err);
-        this.errorMessage = "Unexpected error occurred";
-  	 }
-  	  this.dismiss();	 
-    });
-  }
+  // login(){
+  //   this.presentLoading();
+  //   this.authService.login(this.user).subscribe(data => {
+  //     this.dismiss();
+  //     this.router.navigate(['/home']);
+  //   },err =>{
+  //     if (err && err.status === 401) {
+  //       this.errorMessage = "Username or password is incorrect";
+  // 	  } else if (err && err.status === 409) {
+  //       this.errorMessage = "Username / Password is not valid";
+  //     } else {
+  // 	    console.log(err);
+  //       this.errorMessage = "Unexpected error occurred";
+  // 	 }
+  // 	  this.dismiss();	 
+  //   });
+  // }
 
   async presentLoading() {
     this.loader = await this.loadingCtrl.create({

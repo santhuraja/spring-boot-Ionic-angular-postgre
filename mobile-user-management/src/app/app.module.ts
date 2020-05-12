@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, DoBootstrap } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
@@ -12,10 +12,15 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
+import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+import { AuthService } from './services/auth.service';
+import { environment } from '../environments/environment';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
+
+const keycloakService = new KeycloakService();
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [AppComponent, ForbiddenComponent],
   imports: [
     FormsModule,
     ReactiveFormsModule,
@@ -28,8 +33,24 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
     StatusBar,
     SplashScreen,
     Camera,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    {
+      provide: KeycloakService,
+      useValue: keycloakService
+    },
+    AuthService
   ],
-  bootstrap: [AppComponent]
+  entryComponents: [AppComponent]
 })
-export class AppModule {}
+export class AppModule implements DoBootstrap {
+  async ngDoBootstrap(app) {
+    const { keycloakConfig } = environment;
+
+    try {
+      await keycloakService.init({ config: keycloakConfig });
+      app.bootstrap(AppComponent);
+    } catch (error) {
+      console.error('Keycloak init failed', error);
+    }
+  }
+}

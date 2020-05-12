@@ -16,18 +16,18 @@ export class ListPage implements OnInit {
 
   ngOnInit() {
     this.menu.enable(true);
-    this.findAllUsers();
+    //this.findAllUsers();
   }
 
   ionViewWillEnter() {
     this.menu.enable(true);
   }
 
-  findAllUsers(){
-    this.authService.findAllUsers().subscribe(data => {
-      this.userList = data;
-    });
-  }
+  // findAllUsers(){
+  //   this.authService.findAllUsers().subscribe(data => {
+  //     this.userList = data;
+  //   });
+  // }
 
   detail(user:User) {
     this.router.navigate(['/detail', user.id]);

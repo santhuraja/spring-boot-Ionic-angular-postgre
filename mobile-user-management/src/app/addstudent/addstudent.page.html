@@ -26,11 +26,11 @@
           
           <ion-item>
             <ion-label color="primary" position="floating" title="Student Name">Student Name</ion-label>
-            <ion-input type="text" class="ion-input-back-color" id="name" name="name"  [(ngModel)]="student.name"> </ion-input>
+            <ion-input type="text" class="ion-input-back-color" id="studentName" name="studentName"  [(ngModel)]="student.studentName"> </ion-input>
           </ion-item>
-          <ion-item>
+          <ion-item [hidden]="true">
             <ion-label color="primary" position="floating" title="Student Id">Student Id</ion-label>
-            <ion-input type="number" class="form-control input-text-custom" id="id" name="id" [(ngModel)]="student.id"></ion-input>
+            <ion-input type="number" class="form-control input-text-custom" id="studentId" name="studentId" [(ngModel)]="student.studentId"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label color="primary" position="floating" title="Hostel Id">Hostel Id</ion-label>
@@ -53,7 +53,7 @@
           </ion-item>
           <ion-item>
             <ion-label color="primary" position="floating">Address</ion-label>
-            <ion-textarea class="form-control input-text-custom" id="address" name="address" [(ngModel)]="student.address"  ></ion-textarea>
+            <ion-textarea class="form-control input-text-custom" id="studentAddress" name="studentAddress" [(ngModel)]="student.studentAddress"  ></ion-textarea>
           </ion-item>
           <ion-item>
             <ion-label color="primary" position="floating" title="Student Class">Student Class</ion-label>

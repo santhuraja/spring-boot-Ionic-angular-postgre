@@ -41,7 +41,7 @@ export class AddStudentPage implements OnInit {
     }
     async successMessage() {
       const toast = await this.toastController.create({
-        message: 'School saved successfully',
+        message: 'Student saved successfully',
         position: 'top',
         cssClass: 'toast-success',
         color:"success",

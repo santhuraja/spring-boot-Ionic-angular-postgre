@@ -1,15 +1,22 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: '/dashboard',
     pathMatch: 'full'
   },
+  // {
+  //   path: '',
+  //   redirectTo: 'login',
+  //   pathMatch: 'full'
+  // },
   { path: 'home', loadChildren: './home/home.module#HomePageModule'},
   { path: 'list', loadChildren: './list/list.module#ListPageModule'},
-  { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardPageModule'},
+  { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardPageModule',  canActivate: [AuthGuard]},
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'detail', loadChildren: './detail/detail.module#DetailPageModule' },
@@ -28,18 +35,20 @@ const routes: Routes = [
   { path: 'notice-view', loadChildren: './notice-view/notice-view.module#NoticeViewPageModule' },
   { path: 'class-timetable', loadChildren: './class-timetable/class-timetable.module#ClassTimetablePageModule' },
   { path: 'download', loadChildren: './download/download.module#DownloadPageModule' },
-  { path: 'exam-result', loadChildren: './exam-result/exam-result.module#ExamResultPageModule' },
+  { path: 'exam-result', loadChildren: './exam-result/exam-result.module#ExamResultPageModule',  canActivate: [AuthGuard], data: {roles: ["admin"]} },
   { path: 'fees', loadChildren: './fees/fees.module#FeesPageModule' },
   { path: 'invoice', loadChildren: './invoice/invoice.module#InvoicePageModule' },
   { path: 'student', loadChildren: './student/student.module#StudentPageModule' },
   { path: 'student-info', loadChildren: './student-info/student-info.module#StudentInfoPageModule' },
-  { path: 'transport', loadChildren: './transport/transport.module#TransportPageModule' }
+  { path: 'transport', loadChildren: './transport/transport.module#TransportPageModule' },
+  { path: '403', component: ForbiddenComponent }
 ];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
+  providers: [AuthGuard],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

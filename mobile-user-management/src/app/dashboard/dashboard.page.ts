@@ -120,8 +120,4 @@ export class DashboardPage implements OnInit {
   //   });
   // }
 
-  async doLogout() {
-    await this.keycloakService.logout();
-  }
-
 }

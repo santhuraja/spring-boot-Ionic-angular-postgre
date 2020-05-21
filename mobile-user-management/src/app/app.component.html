@@ -9,14 +9,21 @@
       </ion-header>
       <ion-content class="background">
         <ion-list class="background">
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+          <ion-menu-toggle auto-hide="false" >
+            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]" *ngFor="let p of appPages">
               <ion-icon color="primary" slot="start" [name]="p.icon"></ion-icon>
               <ion-label color="primary">
                 {{p.title}}
               </ion-label>
             </ion-item>
+            <ion-item [routerDirection]="'root'" (click)="doLogout()"  [routerLink]="" >
+              <ion-icon color="primary" slot="start" name="log-out"></ion-icon>
+                <ion-label color="primary">
+                  Log-Out
+                </ion-label>
+            </ion-item>
           </ion-menu-toggle>
+          
         </ion-list>
       </ion-content>
     </ion-menu>

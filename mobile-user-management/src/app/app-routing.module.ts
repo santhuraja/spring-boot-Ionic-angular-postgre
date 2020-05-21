@@ -41,6 +41,8 @@ const routes: Routes = [
   { path: 'student', loadChildren: './student/student.module#StudentPageModule' },
   { path: 'student-info', loadChildren: './student-info/student-info.module#StudentInfoPageModule' },
   { path: 'transport', loadChildren: './transport/transport.module#TransportPageModule' },
+  { path: 'chat', loadChildren: './chat/chat.module#ChatPageModule',  canActivate: [AuthGuard] },
+  { path: 'bubble', loadChildren: './bubble/bubble.module#BubblePageModule',  canActivate: [AuthGuard] },
   { path: '403', component: ForbiddenComponent }
 ];
 

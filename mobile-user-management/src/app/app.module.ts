@@ -36,11 +36,11 @@ const keycloakService = new KeycloakService();
     Camera,
     CalendarComponent,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    {
-      provide: KeycloakService,
-      useValue: keycloakService
-    },
-    AuthService
+    // {
+    //   provide: KeycloakService,
+    //   useValue: keycloakService
+    // },
+    // AuthService
   ],
   entryComponents: [AppComponent]
 })

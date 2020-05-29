@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from './auth.guard';
+//import { AuthGuard } from './auth.guard';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 
 const routes: Routes = [
@@ -43,8 +43,10 @@ const routes: Routes = [
   { path: 'student', loadChildren: './student/student.module#StudentPageModule' },
   { path: 'student-info', loadChildren: './student-info/student-info.module#StudentInfoPageModule' },
   { path: 'transport', loadChildren: './transport/transport.module#TransportPageModule' },
-  { path: 'chat', loadChildren: './chat/chat.module#ChatPageModule',  canActivate: [AuthGuard] },
-  { path: 'bubble', loadChildren: './bubble/bubble.module#BubblePageModule',  canActivate: [AuthGuard] },
+  { path: 'chat', loadChildren: './chat/chat.module#ChatPageModule' },
+  //{ path: 'chat', loadChildren: './chat/chat.module#ChatPageModule',  canActivate: [AuthGuard] },
+  { path: 'bubble', loadChildren: './bubble/bubble.module#BubblePageModule' },
+  //{ path: 'bubble', loadChildren: './bubble/bubble.module#BubblePageModule',  canActivate: [AuthGuard] },
   { path: '403', component: ForbiddenComponent }
 ];
 
@@ -52,7 +54,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
-  providers: [AuthGuard],
+ // providers: [AuthGuard],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

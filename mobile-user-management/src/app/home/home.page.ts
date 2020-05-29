@@ -1,5 +1,5 @@
 import { Component, OnInit, SimpleChanges } from '@angular/core';
-import { AuthService } from '../services/auth.service';
+//import { AuthService } from '../services/auth.service';
 import {User} from '../model/user';
 import {Router} from '@angular/router';
 import {MenuController} from '@ionic/angular';

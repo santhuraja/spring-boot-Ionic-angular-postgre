@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SchoolSettingsService } from '../services/school/school.settings.service';
-import { AuthService } from '../services/auth.service';
+//import { AuthService } from '../services/auth.service';
 import {School} from '../model/school';
 import {User} from '../model/user';
 import {Router} from '@angular/router';
@@ -21,7 +21,9 @@ export class SchoolSettingsPage implements OnInit {
   schoolForm : FormGroup;
   defaultDate = "1987-06-30";
 
-  constructor(private authService: AuthService,private schoolSettingsService: SchoolSettingsService, private router: Router,
+  constructor(
+    //private authService: AuthService,
+    private schoolSettingsService: SchoolSettingsService, private router: Router,
     private menuController: MenuController, private loadingCtrl: LoadingController,
     private toastController: ToastController,public formBuilder: FormBuilder) { 
       this.currentUser = JSON.parse(localStorage.getItem('currentUser'));

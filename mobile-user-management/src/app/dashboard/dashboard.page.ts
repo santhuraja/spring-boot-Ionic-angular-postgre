@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
+//import { AuthService } from '../services/auth.service';
 import {User} from '../model/user';
 import {Router} from '@angular/router';
 import {MenuController} from '@ionic/angular';
 import { KeycloakProfile } from 'keycloak-js';
-import { KeycloakService } from 'keycloak-angular';
+//import { KeycloakService } from 'keycloak-angular';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +12,8 @@ import { KeycloakService } from 'keycloak-angular';
   styleUrls: ['dashboard.page.scss'],
 })
 export class DashboardPage implements OnInit {
-  userDetails: KeycloakProfile;
+  //userDetails: KeycloakProfile;
+  
 
   appPages=[
     {
@@ -94,20 +95,22 @@ export class DashboardPage implements OnInit {
   ]
 
 
-  constructor(private keycloakService: KeycloakService, private authService: AuthService
-    , private menu: MenuController) { }
+  constructor(
+    //private keycloakService: KeycloakService, 
+    //private authService: AuthService,
+    private menu: MenuController) { }
 
   async ngOnInit() {
     this.menu.enable(true);
-    console.log("keyserv " + this.keycloakService)
-    if (await this.keycloakService.isLoggedIn()) {
-      console.log("before " + this.userDetails)
-      this.userDetails = await this.keycloakService.loadUserProfile();
-      console.log("after " + this.userDetails)
-      console.log("after " + this.userDetails.username)
-      //this.isAdmin = this.authService.getRoles('admin');
-      //this.isEmployee = this.authService.getRoles('employee');
-    }
+    // console.log("keyserv " + this.keycloakService)
+    // if (await this.keycloakService.isLoggedIn()) {
+    //   console.log("before " + this.userDetails)
+    //   this.userDetails = await this.keycloakService.loadUserProfile();
+    //   console.log("after " + this.userDetails)
+    //   console.log("after " + this.userDetails.username)
+    //   //this.isAdmin = this.authService.getRoles('admin');
+    //   //this.isEmployee = this.authService.getRoles('employee');
+    // }
   }
 
   

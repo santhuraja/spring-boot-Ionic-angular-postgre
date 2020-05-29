@@ -4,14 +4,14 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import {MenuController} from '@ionic/angular';
 import { KeycloakProfile } from 'keycloak-js';
-import { KeycloakService } from 'keycloak-angular';
+//import { KeycloakService } from 'keycloak-angular';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
-  userDetails: KeycloakProfile;
+  //userDetails: KeycloakProfile;
 
   public appPages = [
     {
@@ -40,7 +40,7 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private keycloakService: KeycloakService,
+    //private keycloakService: KeycloakService,
     private menu: MenuController
   ) {
     this.initializeApp();
@@ -57,17 +57,17 @@ export class AppComponent {
   }
   async ngOnInit() {
     this.menu.enable(true);
-    console.log("keyserv " + this.keycloakService)
-    if (await this.keycloakService.isLoggedIn()) {
-      console.log("before " + this.userDetails)
-      this.userDetails = await this.keycloakService.loadUserProfile();
-      console.log("after " + this.userDetails)
-      console.log("after " + this.userDetails.username)
-      //this.isAdmin = this.authService.getRoles('admin');
-      //this.isEmployee = this.authService.getRoles('employee');
-    }
+    // console.log("keyserv " + this.keycloakService)
+    // if (await this.keycloakService.isLoggedIn()) {
+    //   console.log("before " + this.userDetails)
+    //   this.userDetails = await this.keycloakService.loadUserProfile();
+    //   console.log("after " + this.userDetails)
+    //   console.log("after " + this.userDetails.username)
+    //   //this.isAdmin = this.authService.getRoles('admin');
+    //   //this.isEmployee = this.authService.getRoles('employee');
+    // }
   }
   async doLogout() {
-    await this.keycloakService.logout();
+   // await this.keycloakService.logout();
   }
 }

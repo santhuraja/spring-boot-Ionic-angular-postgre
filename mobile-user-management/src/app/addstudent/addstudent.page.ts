@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AddStudentService } from '../services/school/add.student.service';
-import { AuthService } from '../services/auth.service';
+//import { AuthService } from '../services/auth.service';
 import {Student} from '../model/student';
 import {User} from '../model/user';
 import {Router} from '@angular/router';
@@ -19,7 +19,9 @@ export class AddStudentPage implements OnInit {
   loader: any;
   isDismiss = false;
 
-  constructor(private authService: AuthService,private addStudentService: AddStudentService, private router: Router,
+  constructor(
+    //private authService: AuthService,
+    private addStudentService: AddStudentService, private router: Router,
     private menuController: MenuController, private loadingCtrl: LoadingController,private toastController: ToastController) { 
       this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     }

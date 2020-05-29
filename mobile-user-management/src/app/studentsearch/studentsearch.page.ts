@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentSearchService } from '../services/school/student.search.service';
-import { AuthService } from '../services/auth.service';
+//import { AuthService } from '../services/auth.service';
 import {School} from '../model/school';
 import {User} from '../model/user';
 import {Router} from '@angular/router';
@@ -18,7 +18,9 @@ export class StudentSearchPage implements OnInit {
   loader: any;
   isDismiss = false;
 
-  constructor(private authService: AuthService,private studentSearchService: StudentSearchService, private router: Router,
+  constructor(
+    //private authService: AuthService,
+    private studentSearchService: StudentSearchService, private router: Router,
     private menuController: MenuController, private loadingCtrl: LoadingController) { 
       this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     }

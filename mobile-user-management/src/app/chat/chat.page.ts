@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
-import { KeycloakProfile } from 'keycloak-js';
+//import { KeycloakProfile } from 'keycloak-js';
 import {MenuController} from '@ionic/angular';
-import { KeycloakService } from 'keycloak-angular';
+//import { KeycloakService } from 'keycloak-angular';
 
 @Component({
   selector: 'app-pastry',
@@ -12,11 +12,13 @@ import { KeycloakService } from 'keycloak-angular';
 
 export class ChatPage implements OnInit {
   segmentTab: any;
-  userDetails: KeycloakProfile;
+ // userDetails: KeycloakProfile;
   
   chatData: ({ "name": string; "image": string; "description": string; "count": string; "time": string; } | { "name": string; "image": string; "description": string; "time": string; "count"?: undefined; })[];
 
-  constructor(public route: Router,private keycloakService: KeycloakService, private menu: MenuController) {
+  constructor(public route: Router,
+    //private keycloakService: KeycloakService, 
+    private menu: MenuController) {
     this.segmentTab = 'chat';
     
     this.chatData = [{
@@ -99,15 +101,16 @@ export class ChatPage implements OnInit {
 
   async ngOnInit() {
     this.menu.enable(true);
-    console.log("keyserv " + this.keycloakService)
-    if (await this.keycloakService.isLoggedIn()) {
-      console.log("before " + this.userDetails)
-      this.userDetails = await this.keycloakService.loadUserProfile();
-      console.log("after " + this.userDetails)
-      console.log("after " + this.userDetails.username)
-      //this.isAdmin = this.authService.getRoles('admin');
-      //this.isEmployee = this.authService.getRoles('employee');
-    }
+    // console.log("keyserv " + this.keycloakService)
+    // if (await this.keycloakService.isLoggedIn()) {
+    //   console.log("before " + this.userDetails)
+    //   this.userDetails = await this.keycloakService.loadUserProfile();
+    //   console.log("after " + this.userDetails)
+    //   console.log("after " + this.userDetails.username)
+    //   //this.isAdmin = this.authService.getRoles('admin');
+    //   //this.isEmployee = this.authService.getRoles('employee');
+    // }
+    
   }
   segmentChanged(event: any) {
     this.segmentTab = event.detail.value;

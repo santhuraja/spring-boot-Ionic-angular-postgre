@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
+//import { AuthService } from '../services/auth.service';
 import { MenuController,LoadingController } from '@ionic/angular';
 import {User} from '../model/user';
 
@@ -15,7 +15,9 @@ export class LoginPage implements OnInit {
   errorMessage:string;
   isDismiss = false;
 
-  constructor(public authService:AuthService, private menu: MenuController
+  constructor(
+    //public authService:AuthService,
+     private menu: MenuController
   , public loadingCtrl: LoadingController,
   public router: Router) { }
 

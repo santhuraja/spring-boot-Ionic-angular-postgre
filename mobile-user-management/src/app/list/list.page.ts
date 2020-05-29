@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
+//import { AuthService } from '../services/auth.service';
 import {User} from '../model/user';
 import { Router } from '@angular/router';
 import {MenuController} from '@ionic/angular';
@@ -11,7 +11,9 @@ import {MenuController} from '@ionic/angular';
 })
 export class ListPage implements OnInit {
   userList: Array<User>;
-  constructor(private authService: AuthService, private router: Router,
+  constructor(
+    //private authService: AuthService, 
+    private router: Router,
   private menu: MenuController) {}
 
   ngOnInit() {

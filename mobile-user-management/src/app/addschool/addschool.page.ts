@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AddSchoolService } from '../services/school/add.school.service';
-import { AuthService } from '../services/auth.service';
+//import { AuthService } from '../services/auth.service';
 import {School} from '../model/school';
 import {User} from '../model/user';
 import {Router} from '@angular/router';
@@ -29,7 +29,9 @@ export class AddSchoolPage implements OnInit {
   image;
   imageData;
 
-  constructor(private authService: AuthService,private addSchoolService: AddSchoolService, private router: Router,
+  constructor(
+    //private authService: AuthService,
+    private addSchoolService: AddSchoolService, private router: Router,
     private menuController: MenuController, private loadingCtrl: LoadingController, private toastController: ToastController,
     public formBuilder: FormBuilder,private camera: Camera) { 
       this.currentUser = JSON.parse(localStorage.getItem('currentUser'));

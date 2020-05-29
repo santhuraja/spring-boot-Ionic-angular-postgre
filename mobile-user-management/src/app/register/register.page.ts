@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
+//import { AuthService } from '../services/auth.service';
 import {User} from '../model/user';
 import { Router } from '@angular/router';
 import {MenuController, LoadingController} from '@ionic/angular';
@@ -15,7 +15,9 @@ export class RegisterPage implements OnInit {
   loader: any;
   isDismiss = false;
 
-  constructor(private authService: AuthService, private router: Router,
+  constructor(
+    //private authService: AuthService,
+     private router: Router,
   private menuController: MenuController, private loadingCtrl: LoadingController) { }
 
   ngOnInit() {

@@ -13,12 +13,12 @@ import {HttpClientModule} from '@angular/common/http';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { CalendarComponent } from 'ionic2-calendar/calendar';
 
-import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
-import { AuthService } from './services/auth.service';
+//import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+//import { AuthService } from './services/auth.service';
 import { environment } from '../environments/environment';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 
-const keycloakService = new KeycloakService();
+//const keycloakService = new KeycloakService();
 
 @NgModule({
   declarations: [AppComponent, ForbiddenComponent],
@@ -46,10 +46,11 @@ const keycloakService = new KeycloakService();
 })
 export class AppModule implements DoBootstrap {
   async ngDoBootstrap(app) {
-    const { keycloakConfig } = environment;
+    //const { keycloakConfig } = environment;
+    const {  } = environment;
 
     try {
-      await keycloakService.init({ config: keycloakConfig });
+     // await keycloakService.init({ config: keycloakConfig });
       app.bootstrap(AppComponent);
     } catch (error) {
       console.error('Keycloak init failed', error);

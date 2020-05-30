@@ -1,26 +1,31 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button color="light"></ion-back-button>
+      <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>Transport</ion-title>
-    <ion-buttons slot="end">
-      <ion-button color="primary" (click)="showSearch=!showSearch; showAdd ? showAdd = false: ''">
+    <!-- <ion-buttons slot="end">
+      <ion-button (click)="showSearch=!showSearch; showAdd ? showAdd = false: ''">
         <ion-icon name="search"></ion-icon>
       </ion-button>
-      <ion-button color="primary" (click)="showAdd=!showAdd; showSearch ? showSearch = false: ''">
+      <ion-button  (click)="showAdd=!showAdd; showSearch ? showSearch = false: ''">
         <ion-icon name="add"></ion-icon>
       </ion-button>
-    </ion-buttons>
+    </ion-buttons> -->
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="background">
-  <ion-card *ngIf="showSearch" class="row_search">
+  <ion-card class="cell-class">
+  <ion-card-content>
+      <ion-card-header color="primary   ">
+        College Information
+      </ion-card-header>
+  <ion-grid class="cell-class">
     <ion-row>
       <ion-col size="12">
         <ion-item>
-          <ion-label >Country</ion-label>
+          <ion-label ><ion-text color="primary">Country</ion-text></ion-label>
           <ion-select value="india" interface="popover">
             <ion-select-option value="india">India</ion-select-option>
             <ion-select-option value="uk">UK</ion-select-option>
@@ -30,7 +35,7 @@
       </ion-col>
       <ion-col size="12">
         <ion-item>
-          <ion-label>City</ion-label>
+          <ion-label><ion-text color="primary">City</ion-text></ion-label>
           <ion-select value="mumbai" interface="popover">
             <ion-select-option value="mumbai">Mumbai</ion-select-option>
             <ion-select-option value="ahmedabad">Ahmedabad</ion-select-option>
@@ -40,7 +45,7 @@
       </ion-col>
       <ion-col size="12">
         <ion-item>
-          <ion-label>College Name</ion-label>
+          <ion-label><ion-text color="primary">College Name</ion-text></ion-label>
           <ion-select value="ss" interface="popover">
             <ion-select-option value="ss">SS</ion-select-option>
             <ion-select-option value="cps">CPS</ion-select-option>
@@ -50,7 +55,7 @@
       </ion-col>
       <ion-col size="12">
         <ion-item>
-          <ion-label>Acedamic Year</ion-label>
+          <ion-label><ion-text color="primary">Acedamic Year</ion-text></ion-label>
           <ion-select value="2019-2020" interface="popover">
             <ion-select-option value="2019-2020">2019-2020</ion-select-option>
             <ion-select-option value="2018-2019">2018-2019</ion-select-option>
@@ -59,41 +64,60 @@
         </ion-item>
       </ion-col>
       <ion-col size="12">
-        <ion-button size="full" (click)="showSearch=!showSearch">Search</ion-button>
+        <ion-button size="full" color="secondary">Search</ion-button>
       </ion-col>
     </ion-row>
-  </ion-card>
-
-   <ion-card *ngIf="showAdd" class="row_search">
+  </ion-grid>
+ <br>
+   
+  <ion-grid >
     <ion-row>
-      <ion-col size="12">
-        <ion-item>
-          <ion-label position="floating">Route Name</ion-label>
-          <ion-input type="text"></ion-input>
+
+    </ion-row>
+  </ion-grid>
+
+  <ion-card-header color="primary   ">
+    Route Information
+  </ion-card-header>
+  <ion-grid class="cell-class">
+    <ion-row>
+      <ion-col size="12" >
+        <ion-item class="input-color">
+          <ion-label position="floating"><ion-text color="primary">Route Name</ion-text></ion-label>
+          <ion-input  type="text" ></ion-input>
         </ion-item>
       </ion-col>
       <ion-col size="6">
-        <ion-button size="full" (click)="showAdd=!showAdd">Add Route</ion-button>
+        <ion-button  size="full" color="secondary">Add Route</ion-button>
       </ion-col>
       <ion-col size="6">
-        <ion-button size="full" (click)="showAdd=!showAdd" color="danger">Cancel</ion-button>
+        <ion-button size="full" color="secondary">Cancel</ion-button>
       </ion-col>
     </ion-row>
-  </ion-card>
 
-  <ion-list>
-    <ion-item *ngFor="let route of routes">
-      {{route.name}}
-      <ion-buttons slot="end">
-        <ion-button fill="clear">
-          <ion-icon name="create" color="primary"></ion-icon>
-        </ion-button>
-        <ion-button fill="clear">
-          <ion-icon name="trash" color="dark"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-    </ion-item>
-  </ion-list>
-
-
+    <ion-row class="cell-header">
+      <ion-col class="cell-class"><ion-text >Name</ion-text></ion-col>
+      <ion-col ><ion-text>Edit</ion-text></ion-col>
+      <ion-col class="cell-class"><ion-text>Delete</ion-text></ion-col>
+    </ion-row>
+    <ion-row *ngFor="let route of routes">
+      <ion-col class="cell-class"><ion-text color="primary">{{route.name}}</ion-text></ion-col>
+      <ion-col class="cell-class">
+        <ion-text color="primary">
+          <ion-button fill="clear">
+            <ion-icon name="create" color="primary"></ion-icon>
+          </ion-button>
+        </ion-text>
+      </ion-col>
+      <ion-col class="cell-class">
+        <ion-text color="primary">
+          <ion-button fill="clear">
+            <ion-icon name="trash" color="primary"></ion-icon>
+          </ion-button>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card-content>
+</ion-card>
 </ion-content>

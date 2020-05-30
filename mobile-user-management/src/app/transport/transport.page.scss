@@ -6,3 +6,27 @@
         --padding-start: 0px;
     }
 }
+ion-list {
+    --background: transparent!important;
+}
+.cell-class {
+    border-color: #0cd1e8; 
+    border-width: .01em; 
+    border-style:solid; margin-bottom : -1px;
+    color: whitesmoke;
+ }
+
+ .cell-class-bottom {
+    border-color: #0cd1e8; 
+    border-bottom-width: .01em; 
+    border-style:solid; margin-bottom : -1px;
+    color: whitesmoke;
+ }
+
+ .cell-header {
+     background-color:#0cd1e8;
+ }
+
+ .input-color {
+    background-color:rgb(243, 243, 243);
+}

@@ -92,6 +92,12 @@ export class DashboardPage implements OnInit {
       url: '/syllabus',
       icon: 'book'
     }
+    ,
+    {
+      title: 'Transport',
+      url: '/transport',
+      icon: 'bus'
+    }
   ]
 
 

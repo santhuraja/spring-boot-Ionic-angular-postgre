@@ -1,13 +1,16 @@
 {
-  "name": "mobile-user-management",
+  "name": "sms-client",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve --port=4200 --proxy-config src/proxy-conf.js -o",
+    "start:prod": "ng serve --port=4200 --prod",
+    "build": "ng build --outputPath=../src/main/resources/static",
     "test": "ng test",
+    "test-ci": "npm run test",
+    "test-dev": "ng test --watch --browsers=Chrome --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

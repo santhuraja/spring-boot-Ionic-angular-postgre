@@ -4,8 +4,9 @@ import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {Student} from '../../model/student';
 import {User} from '../../model/user';
+import { properties } from 'src/init';
 
-let API_URL = "http://localhost:9090/api";
+let API_URL = properties.apiUrl;
 
 @Injectable({
   providedIn: 'root'

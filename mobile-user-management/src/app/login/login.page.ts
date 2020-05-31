@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-//import { AuthService } from '../services/auth.service';
+import { AuthService } from '../services/auth.service';
 import { MenuController,LoadingController } from '@ionic/angular';
 import {User} from '../model/user';
 
@@ -16,7 +16,7 @@ export class LoginPage implements OnInit {
   isDismiss = false;
 
   constructor(
-    //public authService:AuthService,
+    public authService:AuthService,
      private menu: MenuController
   , public loadingCtrl: LoadingController,
   public router: Router) { }
@@ -25,23 +25,23 @@ export class LoginPage implements OnInit {
       this.menu.enable(false);
   }
 
-  // login(){
-  //   this.presentLoading();
-  //   this.authService.login(this.user).subscribe(data => {
-  //     this.dismiss();
-  //     this.router.navigate(['/home']);
-  //   },err =>{
-  //     if (err && err.status === 401) {
-  //       this.errorMessage = "Username or password is incorrect";
-  // 	  } else if (err && err.status === 409) {
-  //       this.errorMessage = "Username / Password is not valid";
-  //     } else {
-  // 	    console.log(err);
-  //       this.errorMessage = "Unexpected error occurred";
-  // 	 }
-  // 	  this.dismiss();	 
-  //   });
-  // }
+  login(){
+    this.presentLoading();
+    this.authService.login(this.user).subscribe(data => {
+      this.dismiss();
+      this.router.navigate(['/home']);
+    },err =>{
+      if (err && err.status === 401) {
+        this.errorMessage = "Username or password is incorrect";
+  	  } else if (err && err.status === 409) {
+        this.errorMessage = "Username / Password is not valid";
+      } else {
+  	    console.log(err);
+        this.errorMessage = "Unexpected error occurred";
+  	 }
+  	  this.dismiss();	 
+    });
+  }
 
   async presentLoading() {
     this.loader = await this.loadingCtrl.create({

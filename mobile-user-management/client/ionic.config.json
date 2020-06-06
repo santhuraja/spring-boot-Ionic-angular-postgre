@@ -1,0 +1,9 @@
+{
+  "name": "mobile-user-management",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "typescript": true,
+  "defaultBrowser": "chrome"
+}

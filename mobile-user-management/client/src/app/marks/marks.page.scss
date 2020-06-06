@@ -1,0 +1,34 @@
+ion-avatar{
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+}
+ion-col{
+    font-size: 13px;
+    text-align: center;
+}
+.tabel_header{
+    background: var(--ion-color-primary);
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    padding: 15px;
+}
+.col_header{
+    background: var(--ion-color-light);
+}
+.col_sub_header{
+    background: var(--ion-color-secondary);
+    color: #fff
+}
+ion-card-content{
+    font-size: 14px;
+    ion-label{
+        display: block;
+        b{
+            color: var(--ion-color-primary);
+        }
+    }
+}

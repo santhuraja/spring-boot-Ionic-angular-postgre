@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Notice</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <ion-card *ngFor="let notice of notices" (click)="viewNotice(notice)">
+    <ion-card-header>
+        <img src="../../assets/images/megaphone.png"/>
+        <ion-label>{{notice.title}}</ion-label>
+    </ion-card-header>
+    <ion-card-content>
+      <img src="../../assets/images/calendar.png"/>
+      <ion-label>Date<br>{{notice.date}}</ion-label>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

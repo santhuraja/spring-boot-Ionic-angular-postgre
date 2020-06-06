@@ -1,0 +1,14 @@
+ion-segment-button{
+    font-size: 10px;
+}
+
+ion-row{
+    padding: 10px 0px;
+    margin: 5px 5px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--ion-color-light);
+    color: var(--ion-color-primary);
+    .text_date{
+        font-size: 13px;
+    }
+}

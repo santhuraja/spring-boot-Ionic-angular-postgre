@@ -1,0 +1,17 @@
+ion-card{
+    border-radius: 15px;
+    ion-card-header{
+        background: rgb(30,31,60);
+        color: #fff;
+        font-size: 17px;
+        margin-bottom: 10px;
+    }
+    img{
+        width: 50%;
+        display: flex;
+        margin: auto;
+    }
+    ion-card-content{
+        font-size: 17px;
+    }
+}

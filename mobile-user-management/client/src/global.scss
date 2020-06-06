@@ -1,0 +1,32 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+@import '~@ionic/angular/css/display.css';
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+ion-content.background{
+  --background: url(/assets/images/bg.jpg) no-repeat;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+}
+ion-menu.background{
+  --background: url(/assets/images/bg.jpg) no-repeat;
+}
+ion-list.background{
+    background: transparent!important;
+}
+ion-item {
+  --background: transparent!important;
+}
+ion-card.background {
+  --background: url(/assets/images/bg.jpg) no-repeat;
+}

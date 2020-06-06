@@ -1,0 +1,46 @@
+
+<ion-grid>
+	<ion-row justify-content-center>
+		<ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+      <div class="bg">
+      <ion-item *ngIf="errorMessage" class="help-block" no-lines color="danger">
+        <ion-label><strong>Error: </strong>{{errorMessage}}</ion-label>
+      </ion-item>
+			<div text-center>
+				<h4><ion-text color="primary">Login Form</ion-text></h4>
+			</div>
+      <form name="form-signin" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+			<div padding>
+				<ion-item>
+          <ion-label color="primary" position="floating">
+            <ion-icon name="person" color="primary"></ion-icon>
+            Username
+          </ion-label>
+					<ion-input type="text" class="form-control input-text-custom" id="username" name="username" [(ngModel)]="user.username" #username="ngModel" required></ion-input>
+        </ion-item>
+        <ion-item *ngIf="f.submitted && !username.valid" class="help-block" no-lines color="danger">
+          <ion-label>A valid Username is required.</ion-label>
+        </ion-item>
+				<ion-item>
+          <ion-label color="primary" position="floating">
+            <ion-icon name="lock" color="primary"></ion-icon>
+            Password
+          </ion-label>
+					<ion-input type="password" class="form-control input-text-custom" id="password" name="password" [(ngModel)]="user.password" #password="ngModel" required></ion-input>
+        </ion-item>
+        <ion-item *ngIf="f.submitted && !password.valid" class="help-block" no-lines color="danger">
+          <ion-label>Password is required.</ion-label>
+        </ion-item>
+			</div>
+
+			<div padding>
+				<ion-button size="large" type="submit" expand="block">Sign In</ion-button>
+			</div>
+      </form>
+      <div padding>
+        <ion-button fill="clear" expand="block" color="primary" [routerLink]="['/register']">Create New Account!</ion-button>
+      </div>
+    </div>
+		</ion-col>
+	</ion-row>
+</ion-grid>

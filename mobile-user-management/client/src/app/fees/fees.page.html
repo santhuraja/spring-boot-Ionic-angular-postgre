@@ -1,0 +1,34 @@
+<ion-header mode="md">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Fees</ion-title>
+  </ion-toolbar>
+  <div class="div_header">
+    <ion-label class="lbl_title" color="primary">Grand Total</ion-label>
+    <div class="div_flex">
+      <ion-label><b>Amount</b><br><span>$570.00</span></ion-label>
+      <ion-label><b>Discount</b><br><span>$50.00</span></ion-label>
+      <ion-label><b>Fine</b><br><span>$0.00</span></ion-label>
+      <ion-label><b>Paid</b><br><span>$570.00</span></ion-label>
+      <ion-label><b>Balance</b><br><span>$570.00</span></ion-label>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content class="background">
+  <div class="div_header" *ngFor="let f of fees">
+    <div class="div_flex_header">  
+      <ion-label class="lbl_title" color="primary">{{f.title}}</ion-label>
+      <ion-button fill="clear" color="primary" size="small" mode="md" (click)="viewInvoice()"><ion-icon name="eye"></ion-icon></ion-button>
+    </div>
+    <div class="div_flex">
+      <ion-label><b>Due Date</b><br><span>{{f.due_date}}</span></ion-label>
+      <ion-label><b>Amount</b><br><span>{{f.amount}}</span></ion-label>
+      <ion-label><b>Paid</b><br><span>{{f.paid}}</span></ion-label>
+      <ion-label><b>Balance</b><br><span>{{f.balance}}</span></ion-label>
+      <ion-label><b>status</b><br><span class="span_status" [class.p]="f.status == 'Partial'" [class.u]="f.status == 'Unpaid'" [class.pa]="f.status == 'Paid'">{{f.status}}</span></ion-label>
+    </div>
+  </div>
+</ion-content>

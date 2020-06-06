@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Exam Result</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <ion-icon md="cloud-download-sharp" ios="cloud-download-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content calss="background">
+  <ion-row>
+    <ion-col size="1"></ion-col>
+    <ion-col size="10">
+      <ion-row class="row_border">
+        <ion-col size="12">
+          <ion-item lines="none">
+            <ion-label>Select Exam</ion-label>
+            <ion-select value="first" placeholder="Select Exam" interface="popover">
+              <ion-select-option value="first">First Exam</ion-select-option>
+              <ion-select-option value="second">Second Exam</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+    <ion-col size="1"></ion-col>
+  </ion-row>
+
+  <div class="row_marksheet">
+    <ion-row>
+      <ion-col size="4">
+        <ion-text><b>Subject</b></ion-text>
+      </ion-col>
+      <ion-col size="3">
+        <ion-text><b>Mark</b></ion-text>
+      </ion-col>
+      <ion-col size="2">
+        <ion-text><b>Grade</b></ion-text>
+      </ion-col>
+      <ion-col size="3">
+        <ion-text><b>Comment</b></ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let mark of marks">
+      <ion-col size="4">
+        <ion-text>{{mark.subject}}</ion-text>
+      </ion-col>
+      <ion-col size="3">
+        <ion-text>{{mark.mark}}</ion-text>
+      </ion-col>
+      <ion-col size="2">
+        <ion-text>{{mark.grade}}</ion-text>
+      </ion-col>
+      <ion-col size="3">
+        <ion-text>{{mark.commnet}}</ion-text>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <ion-row class="result_summary">
+    <ion-col size="4">
+      <div>
+        <ion-text class="text_gain">591</ion-text>
+        <ion-text>700</ion-text>
+      </div>
+    </ion-col>
+    <ion-col size="4">
+      <div>
+        <ion-text class="text_gain">GPA</ion-text>
+        <ion-text>9.14</ion-text>
+      </div>
+    </ion-col>
+    <ion-col size="4">
+      <div>
+        <ion-text>Pass</ion-text>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <ion-label class="ion-margin" color="dark">GPA: Grade Point Average</ion-label>
+</ion-content>

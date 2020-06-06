@@ -1,0 +1,39 @@
+<ion-header mode="md">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Downloads</ion-title>
+  </ion-toolbar>
+  <ion-segment value="assignment" (ionChange)="segmentChanged($event)" mode="md" color="danger">
+    <ion-segment-button value="assignment">
+      <ion-label>Assignment</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="study_material">
+      <ion-label>Study Material</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="syllabus">
+      <ion-label>Syllabus</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="others">
+      <ion-label>Others</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<ion-content class="background">
+  <ion-row *ngFor="let assignment of assignments">
+    <ion-col size="5">
+      <ion-text>{{assignment.title}}</ion-text>
+    </ion-col>
+    <ion-col size="4">
+      <ion-text>Date</ion-text><br>
+      <ion-text class="text_date">{{assignment.date}}</ion-text>
+    </ion-col>
+    <ion-col size="3" style="text-align: center;">
+      <ion-button color="primary" size="small" fill="clear" mode="md"><ion-icon name="download" ios="download-outline"></ion-icon></ion-button>
+    </ion-col>
+  </ion-row>
+  
+
+</ion-content>

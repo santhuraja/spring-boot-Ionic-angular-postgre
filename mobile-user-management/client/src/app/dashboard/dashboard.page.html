@@ -1,0 +1,51 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      
+      </ion-buttons>
+      <ion-title>
+        <ion-text>Admin Dashboard.
+        
+        </ion-text>
+    
+        <!-- <button (click)="doLogout()">Logout</button>-->
+        <!-- Welcome to Your App, {{userDetails.firstName | titlecase }} -->
+       
+      </ion-title>
+     
+    </ion-toolbar>
+
+   
+  </ion-header>
+
+  <ion-content class="background"> 
+    <ion-row>
+      <ion-col size="4" size-lg="2" size-md="2" size-sm="2" *ngFor="let page of appPages">
+        <ion-card class="card_dashboard" routerDirection="root" [routerLink]="[page.url]">
+          <ion-card-content>
+            <ion-icon size="large" [name]="page.icon" color="primary" ></ion-icon>
+            <ion-label color="primary">{{page.title}}</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row class="notice_row">
+      <ion-col size="12">
+        <ion-label class="label_title">Noticeboard</ion-label>
+        <ion-card>
+          <ion-toolbar>
+            <ion-title color="primary">Lockdown notice</ion-title>
+          </ion-toolbar>
+          <ion-label>Dear student,<br>
+            Because of COVID-19 our institue will remain close till ferther notice.<br>
+            thanks,<br>
+            principal 
+          </ion-label>
+          <ion-label>Date: 01/04/2020</ion-label>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  
+  </ion-content>
+  

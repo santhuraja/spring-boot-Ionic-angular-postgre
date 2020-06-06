@@ -1,0 +1,80 @@
+<ion-item *ngIf="errorMessage" class="help-block" no-lines color="danger">
+  <ion-label><strong>Error: </strong>{{errorMessage}}</ion-label>
+</ion-item>
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        Add Student
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+ 
+  <ion-content class="background">
+       <ion-card color="primary">
+        <ion-card-content >
+          <ion-text>
+            <h3>Student Information</h3>
+          </ion-text>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <form name="add-student" (ngSubmit)="f.form.valid && addStudent()" #f="ngForm" novalidate>
+        <ion-card-content >
+          
+          <ion-item>
+            <ion-label color="primary" position="floating" title="Student Name">Student Name</ion-label>
+            <ion-input type="text" class="ion-input-back-color" id="studentName" name="studentName"  [(ngModel)]="student.studentName"> </ion-input>
+          </ion-item>
+          <ion-item [hidden]="true">
+            <ion-label color="primary" position="floating" title="Student Id">Student Id</ion-label>
+            <ion-input type="number" class="form-control input-text-custom" id="studentId" name="studentId" [(ngModel)]="student.studentId"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" position="floating" title="Hostel Id">Hostel Id</ion-label>
+            <ion-input type="number" class="form-control input-text-custom" id="hostelId" name="hostelId" [(ngModel)]="student.hostelId"  ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" position="floating" title="School Id">School Id</ion-label>
+            <ion-input type="number" class="form-control input-text-custom" id="schoolId" name="schoolId" [(ngModel)]="student.schoolId"  ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" position="floating" title="Parent Id">Parent Id</ion-label>
+            <ion-input type="number" class="form-control input-text-custom" id="parentId" name="parentId" [(ngModel)]="student.parentId"  ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" position="floating">Gender</ion-label>
+            <ion-select class="form-control input-text-custom" id="studentGender" name="studentGender" [(ngModel)]="student.studentGender"  >
+              <ion-select-option value="Male">Male</ion-select-option>
+              <ion-select-option value="Female">Female	</ion-select-option>			
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" position="floating">Address</ion-label>
+            <ion-textarea class="form-control input-text-custom" id="studentAddress" name="studentAddress" [(ngModel)]="student.studentAddress"  ></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" position="floating" title="Student Class">Student Class</ion-label>
+            <ion-input type="number" class="form-control input-text-custom" id="studentClass" name="studentClass" [(ngModel)]="student.studentClass"  ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" position="floating" title="Admission Id">Admission Id</ion-label>
+            <ion-input type="text" class="form-control input-text-custom" id="studentAdmissionId" name="studentAdmissionId" [(ngModel)]="student.studentAdmissionId"  ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" position="floating">Admission Year</ion-label>
+            <ion-datetime datetime-left displayFormat="YYYY-MM-DD" class="form-control input-text-custom" name="studentAdmissionYear" [(ngModel)]="student.studentAdmissionYear"></ion-datetime>
+            
+          </ion-item>
+        </ion-card-content>
+        <ion-item>
+          <ion-button color="primary" type="submit" expand="block"><ion-text >Add Student</ion-text></ion-button>
+          <ion-button color="primary" type="submit" expand="block" [routerLink]="['/dashboard']" ><ion-text >Cancel</ion-text></ion-button>
+        </ion-item>
+      </form>
+      </ion-card>
+  </ion-content>
+
+  

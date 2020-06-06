@@ -5,7 +5,7 @@ import {map} from 'rxjs/operators';
 import {User} from '../model/user';
 import { properties } from 'src/init';
 
-let API_URL = properties.apiUrl;
+let API_URL = properties.apiUrl + "/api";
 
 @Injectable({
   providedIn: 'root'

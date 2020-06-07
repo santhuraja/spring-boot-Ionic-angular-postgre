@@ -1,10 +1,18 @@
 # MobileUserManagement
 
-This project was generated with Ionic 4
+This project was generated with Ionic 5
+
+# Mock server(JSON server)
+    
+	npm run mock:server
 
 ## Development server
 
-Run `ionic serve` for a dev server. Navigate to `http://192.168.56.1:8100/`. The app will automatically reload if you change any of the source files.
+    npm run start:proxy
+	
+## Development server
+
+Run `ionic serve` for a dev server. Navigate to `http://localhost:8100/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 

@@ -12,7 +12,10 @@
     "test-ci": "npm run test",
     "test-dev": "ng test --watch --browsers=Chrome --code-coverage",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "mock:server": "json-server --watch mocks/data.json",
+    "start:proxy": "ng serve --proxy-config src/proxy.conf.json",
+    "start:proxy:mock:server": "concurrently --kill-others \"npm run mock:server\" \"npm run start:proxy\""
   },
   "private": true,
   "dependencies": {

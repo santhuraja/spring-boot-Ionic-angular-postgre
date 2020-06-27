@@ -2,16 +2,17 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
-import {School} from '../../model/school';
+import {Student} from '../../model/student';
 import {User} from '../../model/user';
+import {properties} from 'src/init';
 
-let API_URL = "http://localhost:9090/api";
+let API_URL = properties.apiUrl;
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class StudentSearchService {
+export class StudentService {
   currentUser: User;
   headers: HttpHeaders;
   constructor(private http: HttpClient) {
@@ -29,11 +30,7 @@ export class StudentSearchService {
     }));
   }
   
- addSchool(school: School): Observable<any> {
-    return this.http.post(API_URL + "/v1/schools/add", JSON.stringify(school), {headers: this.headers});
-  }
-
-  findAllSchools(): Observable<any> {
-    return this.http.get(API_URL + "/v1/schools", {headers: this.headers});
+  findAllStudents(): Observable<any> {
+    return this.http.get(API_URL + "/api/v1/students", {headers: this.headers});
   }
 }

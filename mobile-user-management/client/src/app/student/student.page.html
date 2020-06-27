@@ -78,11 +78,11 @@
         <!-- <ion-icon md="person-circle-sharp" ios="person-circle-outline"></ion-icon> -->
       </ion-avatar>
       <ion-label>
-        {{student.name}}<br>
-        {{student.email}}<br>
-        <ion-text color="medium">{{student.class}}/{{student.section}}</ion-text>
+        {{student.studentName}}<br>
+        {{student.studentAdmissionId}}<br>
+        <ion-text color="medium">{{student.studentClass}}/{{student.section}}</ion-text>
       </ion-label>
-      <ion-button slot="end" fill="clear" size="medium" (click)="goToInfo()">
+      <ion-button slot="end" fill="clear" size="medium" (click)="goToInfo(student)">
         <ion-icon color="primary" name="arrow-dropright-circle"></ion-icon>
       </ion-button>
     </ion-item>

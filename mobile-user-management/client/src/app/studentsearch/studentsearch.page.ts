@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentSearchService } from '../services/school/student.search.service';
+import { StudentService } from '../services/school/student.service';
 //import { AuthService } from '../services/auth.service';
 import {School} from '../model/school';
 import {User} from '../model/user';
@@ -20,24 +20,13 @@ export class StudentSearchPage implements OnInit {
 
   constructor(
     //private authService: AuthService,
-    private studentSearchService: StudentSearchService, private router: Router,
+    private studentService: StudentService, private router: Router,
     private menuController: MenuController, private loadingCtrl: LoadingController) { 
       this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     }
   
     ngOnInit() {
       this.menuController.enable(true);
-    }
-  
-    addSchool(){
-      this.presentLoading();
-      this.studentSearchService.addSchool(this.school).subscribe(data=> {
-        this.dismiss();
-        //this.router.navigate(['/dashboard']);
-      },err => {
-        this.errorMessage = "Schoolname already exist";
-        this.dismiss();
-      });
     }
   
     async presentLoading() {

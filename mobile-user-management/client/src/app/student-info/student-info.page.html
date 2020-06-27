@@ -10,12 +10,13 @@
 <ion-content class="background">
   <div class="div_header">
     <img src="../../assets/images/user.png">
-    <div class="user_detail">
-      <ion-label><b>Jonh Doe</b></ion-label>
-      <ion-text>Class: 1 | Section: A</ion-text><br>
-      <ion-text>Roll No: 123456 | Adm. No: 982445</ion-text>
+    <div class="student_detail">
+      <ion-label><b>{{studentInfo.studentName}}</b></ion-label>
+      <ion-text>Class: {{studentInfo.studentClass}} | Section: A</ion-text><br>
+      <ion-text>Roll No: {{studentInfo.studentId}} | Adm. No: {{studentInfo.studentAdmissionId}} </ion-text>
     </div>
   </div>
+
   <div class="div_segment">
     <ion-segment value="personal" (ionChange)="segmentChanged($event)" mode="md">
       <ion-segment-button value="personal">
@@ -38,55 +39,55 @@
       <ion-item>
         <ion-label>
           <p>Date of Birth</p>
-          <h2>05/05/2015</h2>
+          <h2></h2>
         </ion-label>
       </ion-item>
       <ion-item>
         <ion-label>
           <p>Religion</p>
-          <h2>Hindu</h2>
+          <h2></h2>
         </ion-label>
       </ion-item>
       <ion-item>
         <ion-label>
           <p>Phone number</p>
-          <h2>+91 1234 567 890</h2>
+          <h2></h2>
         </ion-label>
       </ion-item>
       <ion-item>
         <ion-label>
           <p>Email Address</p>
-          <h2>bob@smoth.com</h2>
+          <h2></h2>
         </ion-label>
       </ion-item>
       <ion-item>
         <ion-label>
           <p>Present Address</p>
-          <h2>55/8, wyre street, near bus stop, UK 55/8, wyre street, near bus stop, UK</h2>
+          <h2>{{studentInfo.studentAddress}}</h2>
         </ion-label>
       </ion-item>
       <ion-item>
         <ion-label>
           <p>Parmament Address</p>
-          <h2>55/8, wyre street, near bus stop, UK 55/8, wyre street, near bus stop, UK</h2>
+          <h2></h2>
         </ion-label>
       </ion-item>
       <ion-item>
         <ion-label>
           <p>Father's Name</p>
-          <h2>Bane joe</h2>
+          <h2></h2>
         </ion-label>
       </ion-item>
       <ion-item>
         <ion-label>
           <p>Mother's Name</p>
-          <h2>Deny joe</h2>
+          <h2></h2>
         </ion-label>
       </ion-item>
       <ion-item>
         <ion-label>
           <p>Blood Group</p>
-          <h2>A (+ve)</h2>
+          <h2></h2>
         </ion-label>
       </ion-item>
     </ion-list>

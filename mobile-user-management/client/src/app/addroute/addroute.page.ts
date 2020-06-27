@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Route} from '../model/route';
-import { FormGroup,FormControl,FormBuilder } from '@angular/forms';
-import {MenuController} from '@ionic/angular';
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { MenuController } from '@ionic/angular';
+import { TransportService } from '../services/school/transport.service';
+import { Route } from '../model/route';
+import { RouteStop } from '../model/routeStop';
 
 @Component({
   selector: 'app-addroute',
@@ -10,39 +12,37 @@ import {MenuController} from '@ionic/angular';
 })
 export class AddRoutePage implements OnInit {
   public route = {} as Route;
-  routeForm : FormGroup;
+  routeStops: Array<RouteStop>;
+  routeForm: FormGroup;
 
-  routes = [
-    {
-      name: 'Route 1'
-    },
-    {
-      name: 'Route 2'
-    },
-    {
-      name: 'Route 3'
-    },
-    {
-      name: 'Route 4'
-    }
-  ]
-  constructor(public formBuilder: FormBuilder,private menuController: MenuController) {
+  constructor(public formBuilder: FormBuilder,
+    private menuController: MenuController,
+    private transportService: TransportService) {
     this.routeForm = formBuilder.group({
-      name:  new FormControl(),
-      routeStart  :  new FormControl(),
-      routeEnd:  new FormControl(),
-      vehicle:new FormControl(),
-      note:new FormControl()
-      
-      });
-  
-   }
+      name: new FormControl(),
+      startPoint: new FormControl(),
+      endPoint: new FormControl(),
+      vehicle: new FormControl(),
+      description: new FormControl()
+    });
+  }
 
   ngOnInit() {
     this.menuController.enable(true);
+    if (localStorage.getItem('routeInfo') != null) {
+      this.route = JSON.parse(localStorage.getItem('routeInfo'));
+      this.findByRouteStopsId(this.route.routeId);
+      this.route.routeStops = this.routeStops;
+    }
+  }
+
+  findByRouteStopsId(routeId: number){
+    this.transportService.findByRouteStopsId(routeId).subscribe(data => {
+      this.routeStops = data;
+    });
   }
 
   addRoute() {
-    
+
   }
 }

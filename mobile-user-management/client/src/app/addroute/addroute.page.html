@@ -9,22 +9,22 @@
     <form [formGroup]="routeForm" (ngSubmit)="addRoute()">
     <ion-card-content >
       <ion-item>
-        <ion-label color="primary" position="floating" title="Transport Route Title">Transport Route Title</ion-label>
+        <ion-label color="primary" position="floating" title="Route Name">Route Name</ion-label>
         <ion-input type="text" class="ion-input-back-color" formControlName="name" [(ngModel)]="route.name"> </ion-input>
         <small slot="end" *ngIf="routeForm.get('name').hasError('required')" ><ion-text color="danger">Required!</ion-text></small>
         <small slot="end" *ngIf="routeForm.get('name').hasError('minlength')"><ion-text color="danger">Minimum 4 chars</ion-text></small>
       </ion-item>
       <ion-item>
         <ion-label color="primary" position="floating">Route Start</ion-label>
-        <ion-input type="text" class="form-control input-text-custom" formControlName= "routeStart" [(ngModel)]="route.routeStart"></ion-input>
-        <small slot="end" *ngIf="routeForm.get('routeStart').hasError('required')" ><ion-text color="danger">Required!</ion-text></small>
-        <small slot="end" *ngIf="routeForm.get('routeStart').hasError('minlength')"><ion-text color="danger">Minimum 4 chars</ion-text></small>
+        <ion-input type="text" class="form-control input-text-custom" formControlName= "startPoint" [(ngModel)]="route.startPoint"></ion-input>
+        <small slot="end" *ngIf="routeForm.get('startPoint').hasError('required')" ><ion-text color="danger">Required!</ion-text></small>
+        <small slot="end" *ngIf="routeForm.get('startPoint').hasError('minlength')"><ion-text color="danger">Minimum 4 chars</ion-text></small>
       </ion-item>
       <ion-item>
         <ion-label color="primary" position="floating">Route End</ion-label>
-        <ion-input type="text" class="form-control input-text-custom" formControlName= "routeEnd" [(ngModel)]="route.routeEnd"></ion-input>
-        <small slot="end" *ngIf="routeForm.get('routeEnd').hasError('required')" ><ion-text color="danger">Required!</ion-text></small>
-        <small slot="end" *ngIf="routeForm.get('routeEnd').hasError('minlength')"><ion-text color="danger">Minimum 4 chars</ion-text></small>
+        <ion-input type="text" class="form-control input-text-custom" formControlName= "endPoint" [(ngModel)]="route.endPoint"></ion-input>
+        <small slot="end" *ngIf="routeForm.get('endPoint').hasError('required')" ><ion-text color="danger">Required!</ion-text></small>
+        <small slot="end" *ngIf="routeForm.get('endPoint').hasError('minlength')"><ion-text color="danger">Minimum 4 chars</ion-text></small>
       </ion-item>
       <ion-item>
         <ion-label color="primary" position="floating">Vehicle for Route</ion-label>
@@ -58,8 +58,8 @@
         </ion-grid>
       </ion-item>
       <ion-item>
-        <ion-label color="primary" position="floating">Note</ion-label>
-        <ion-textarea class="form-control input-text-custom" [(ngModel)]="route.note" formControlName='note'  ></ion-textarea>
+        <ion-label color="primary" position="floating">Description</ion-label>
+        <ion-textarea class="form-control input-text-custom" [(ngModel)]="route.description" formControlName='description'  ></ion-textarea>
       </ion-item>
     </ion-card-content>
     <ion-item>

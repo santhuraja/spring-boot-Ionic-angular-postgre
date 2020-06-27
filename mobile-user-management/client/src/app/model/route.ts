@@ -1,7 +1,13 @@
+import { RouteStop } from './routeStop';
+
 export class Route {
-  name:string;
-  routeStart:string="";
-  routeEnd:string="";
-  vehicle:string="";
-  note:string="";
+  routeId: number;
+  name: string;
+  startPoint: string = "";
+  endPoint: string = "";
+  description: string = "";
+  vehicle: string = "";
+  staffId: number;
+  teacherId: number;
+  routeStops: Array<RouteStop>;
 }

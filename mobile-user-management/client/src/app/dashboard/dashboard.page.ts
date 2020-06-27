@@ -22,6 +22,11 @@ export class DashboardPage implements OnInit {
       icon: 'school'
     },
     {
+      title: 'Students',
+      url: '/student',
+      icon: 'people'
+    },    
+    {
       title: 'Add Student',
       url: '/addstudent',
       icon: 'person-add'
@@ -61,11 +66,6 @@ export class DashboardPage implements OnInit {
       title: 'Results',
       url: '/exam-result',
       icon: 'book'
-    },
-    {
-      title: 'Students',
-      url: '/student',
-      icon: 'people'
     },
     {
       title: 'Downloads',

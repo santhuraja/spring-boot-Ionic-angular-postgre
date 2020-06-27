@@ -47,6 +47,8 @@ const routes: Routes = [
   //{ path: 'chat', loadChildren: './chat/chat.module#ChatPageModule',  canActivate: [AuthGuard] },
   { path: 'bubble', loadChildren: './bubble/bubble.module#BubblePageModule' },
   //{ path: 'bubble', loadChildren: './bubble/bubble.module#BubblePageModule',  canActivate: [AuthGuard] },
+  { path: 'addroute', loadChildren: './addroute/addroute.module#AddRoutePageModule' },
+  { path: 'addevent', loadChildren: './addevent/addevent.module#AddEventPageModule' },
   { path: '403', component: ForbiddenComponent }
 ];
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-transport',
@@ -20,9 +21,18 @@ export class TransportPage implements OnInit {
       name: 'Route 4'
     }
   ]
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  addRoute(routeName){
+    let navParam: NavigationExtras = {
+      queryParams: {
+        notice: JSON.stringify(routeName)
+      }
+    }
+    this.router.navigate(['/addroute'], navParam);
   }
 
 }

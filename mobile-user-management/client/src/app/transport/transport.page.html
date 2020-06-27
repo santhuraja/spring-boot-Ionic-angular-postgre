@@ -52,11 +52,11 @@
       <ion-col size="12" >
         <ion-item class="input-color">
           <ion-label position="floating"><ion-text color="primary">Route Name</ion-text></ion-label>
-          <ion-input  type="text" ></ion-input>
+          <ion-input name="routeName" type="text" ></ion-input>
         </ion-item>
       </ion-col>
       <ion-col size="6">
-        <ion-button  size="full" color="secondary">Add Route</ion-button>
+        <ion-button  size="full" color="secondary" (click)="addRoute(routeName)">Add Route</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

@@ -6,7 +6,7 @@ export class ExamSchedule {
   year: number; 
   semester: string = "";
   subject: string = ""; 
-  room: string = ""; 
+  classRoom: string = ""; 
   date: string = ""; 
   time: string = ""; 
 }

@@ -29,14 +29,14 @@
       "time": "11:00 AM - 12:00 PM"
     },
     {
-      "title": "First Semester",
-      "classGrade": 4,
-      "section": "A",
-      "year": 2020,
+      "title": "Second Semester",
+      "classGrade": 5,
+      "section": "B",
+      "year": 2021,
       "semester": "I",
       "subject": "Science",
       "room": "205",
-      "date": "15 Jul 2020",
+      "date": "15 Jan 2021",
       "time": "10:00 AM - 11:00 AM"
     }    
   ]

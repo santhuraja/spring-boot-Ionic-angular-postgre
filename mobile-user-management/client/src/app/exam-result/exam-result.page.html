@@ -46,7 +46,7 @@
         <ion-text><b>Rank</b></ion-text>
       </ion-col>
     </ion-row>
-    <ion-row *ngFor="let result of results">
+    <ion-row *ngFor="let result of viewResultSummary.results">
       <ion-col size="4">
         <ion-text>{{result.subject}}</ion-text>
       </ion-col>
@@ -65,14 +65,14 @@
   <ion-row class="result_summary">
     <ion-col size="4">
       <div>
-        <ion-text class="text_gain">591</ion-text>
-        <ion-text>700</ion-text>
+        <ion-text class="text_gain">{{viewResultSummary.totalObtainedMarks}}</ion-text>
+        <ion-text>{{viewResultSummary.totalMarks}}</ion-text>
       </div>
     </ion-col>
     <ion-col size="4">
       <div>
         <ion-text class="text_gain">GPA</ion-text>
-        <ion-text>9.14</ion-text>
+        <ion-text>{{viewResultSummary.totalAverageMarks}}</ion-text>
       </div>
     </ion-col>
     <ion-col size="4">

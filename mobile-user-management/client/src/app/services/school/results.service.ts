@@ -33,8 +33,8 @@ export class ResultsService {
   findAllResults(): Observable<any> {
     return this.http.get(API_URL + "/api/v1/results", { headers: this.headers });
   }
-
-  findResultsByStudentIdAndClass(studentId : number, classGrade : number): Observable<any> {
-    return this.http.get(API_URL + "/api/v1/results/" + studentId + "/" + classGrade, { headers: this.headers });
+  
+  findResultsByStudentIdAndClassAndSemester(studentId : number, classGrade : number, semester : string): Observable<any> {
+    return this.http.get(API_URL + "/api/v1/results/summary/" + studentId + "/" + classGrade + "/" + semester, { headers: this.headers });
   }
 }

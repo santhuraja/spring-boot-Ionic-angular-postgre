@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 import { ResultsService } from '../services/school/results.service';
 import { Result } from '../model/result';
+import { ResultSummary } from '../model/resultSummary';
 
 @Component({
   selector: 'app-exam-result',
@@ -12,9 +12,10 @@ import { Result } from '../model/result';
 export class ExamResultPage implements OnInit {
 
   results: Array<Result>;
+  viewResultSummary: ResultSummary;
+
   constructor(
     private resultsService: ResultsService,
-    private router: Router,
     private menuController: MenuController) { }
 
   /*
@@ -67,14 +68,16 @@ export class ExamResultPage implements OnInit {
 
     ngOnInit() {
       this.menuController.enable(true);
-      this.findResultsByStudentIdAndClass(100, 2020);
+      this.findResultsByStudentIdAndClassAndSemester(100, 3, '4');
     }
-  
-    findResultsByStudentIdAndClass(studentId : number, classGrade : number) {
-      this.resultsService.findResultsByStudentIdAndClass(studentId, classGrade).subscribe(data => {
-        this.results = data;
+
+    findResultsByStudentIdAndClassAndSemester(studentId : number, classGrade : number, semester : string) {
+      this.resultsService.findResultsByStudentIdAndClassAndSemester(studentId, classGrade, semester).subscribe(data => {
+        this.viewResultSummary = data;
+        this.results = this.viewResultSummary.results;
+        localStorage.setItem('resultSummaryView', JSON.stringify(this.viewResultSummary));
+        //localStorage.setItem('resultsView', JSON.stringify(this.resultsView));
       });
     }
-  
 
 }

@@ -6,7 +6,7 @@
     <ion-title>Exam Results</ion-title>
     <ion-buttons slot="end">
       <ion-button fill="clear">
-        <ion-icon md="cloud-download-sharp" ios="cloud-download-outline"></ion-icon>
+        <ion-icon name="cloud-download-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -46,7 +46,7 @@
         <ion-text><b>Rank</b></ion-text>
       </ion-col>
     </ion-row>
-    <ion-row *ngFor="let result of viewResultSummary.results">
+    <ion-row *ngFor="let result of results">
       <ion-col size="4">
         <ion-text>{{result.subject}}</ion-text>
       </ion-col>
@@ -64,13 +64,13 @@
 
   <ion-row class="result_summary">
     <ion-col size="4">
-      <div>
+      <div *ngIf="viewResultSummary">
         <ion-text class="text_gain">{{viewResultSummary.totalObtainedMarks}}</ion-text>
         <ion-text>{{viewResultSummary.totalMarks}}</ion-text>
       </div>
     </ion-col>
     <ion-col size="4">
-      <div>
+      <div *ngIf="viewResultSummary">
         <ion-text class="text_gain">GPA</ion-text>
         <ion-text>{{viewResultSummary.totalAverageMarks}}</ion-text>
       </div>

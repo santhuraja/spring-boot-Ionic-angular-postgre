@@ -10,7 +10,7 @@ import { ResultSummary } from '../model/resultSummary';
   styleUrls: ['./exam-result.page.scss'],
 })
 export class ExamResultPage implements OnInit {
-
+  errorMessage: string;
   results: Array<Result>;
   viewResultSummary: ResultSummary;
 
@@ -68,15 +68,17 @@ export class ExamResultPage implements OnInit {
 
     ngOnInit() {
       this.menuController.enable(true);
-      this.findResultsByStudentIdAndClassAndSemester(100, 3, '4');
+      this.findResultsByStudentIdAndClassAndSemester(101, 3, 'I');
     }
 
     findResultsByStudentIdAndClassAndSemester(studentId : number, classGrade : number, semester : string) {
       this.resultsService.findResultsByStudentIdAndClassAndSemester(studentId, classGrade, semester).subscribe(data => {
         this.viewResultSummary = data;
-        this.results = this.viewResultSummary.results;
-        localStorage.setItem('resultSummaryView', JSON.stringify(this.viewResultSummary));
-        //localStorage.setItem('resultsView', JSON.stringify(this.resultsView));
+        this.results = <Array<Result>>this.viewResultSummary.results;
+              
+      },HttpResponse => {
+        this.errorMessage = HttpResponse.error.message;
+        
       });
     }
 

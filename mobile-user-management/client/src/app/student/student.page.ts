@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {MenuController} from '@ionic/angular';
+import { MenuController} from '@ionic/angular';
 import { StudentService } from '../services/school/student.service';
 import { Student } from '../model/student';
 
@@ -12,6 +12,7 @@ import { Student } from '../model/student';
 export class StudentPage implements OnInit {
 
   students: Array<Student>;
+  studentList: Array<Student>;
   constructor(
     private studentService: StudentService, 
     private router: Router,
@@ -47,10 +48,10 @@ export class StudentPage implements OnInit {
   ]
 */
 
-  ngOnInit() {
+ async ngOnInit() {
     this.menu.enable(true);
     this.findAllStudents();
-  } 
+}
 
   goToInfo(student:Student){
     this.router.navigate(['/student-info']);
@@ -59,8 +60,24 @@ export class StudentPage implements OnInit {
 
   findAllStudents(){
     this.studentService.findAllStudents().subscribe(data => {
+      this.studentList = data;
       this.students = data;
     });
   }
 
+  async filterList(evt) {
+    this.students = this.studentList;
+    const searchTerm = evt.srcElement.value;
+   
+    if (!searchTerm) {
+      return;
+    }
+  
+    this.students = this.students.filter(student => {
+      if (student.studentName && searchTerm) {
+        return (student.studentName.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1);
+      }
+    });
+  }
+  
 }

@@ -39,6 +39,35 @@
       "date": "15 Jan 2021",
       "time": "10:00 AM - 11:00 AM"
     }    
-  ]
+  ],
 
+  "routines": [
+    {  
+      "classGrade": 4,
+      "section": "A",
+      "semester": "I",
+      "subject": "English",
+      "room": "203",
+      "date": "13 Jul 2020",
+      "description": "English page number 1, 2"
+    },
+    {
+      "classGrade": 4,
+      "section": "A",
+      "semester": "I",
+      "subject": "Maths",
+      "room": "204",
+      "date": "14 Jul 2020",
+      "description": "page number 3, 4"
+    },
+    {
+      "classGrade": 5,
+      "section": "B",
+      "semester": "I",
+      "subject": "Science",
+      "room": "205",
+      "date": "15 Jan 2021",
+      "description": "page number 5, 6"
+    }    
+  ]
 }

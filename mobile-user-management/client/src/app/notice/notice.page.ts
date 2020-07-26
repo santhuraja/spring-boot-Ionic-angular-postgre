@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
+import { MenuController } from '@ionic/angular';
+import { NotificationService } from '../services/school/notification.service';
+import { Notification } from '../model/notification';
 
 @Component({
   selector: 'app-notice',
@@ -7,6 +10,35 @@ import { Router, NavigationExtras } from '@angular/router';
   styleUrls: ['./notice.page.scss'],
 })
 export class NoticePage implements OnInit {
+
+  notices: Array<Notification>;
+
+  constructor(
+    private router: Router,
+    private notificationService: NotificationService,
+    private menuController: MenuController) { }
+
+  ngOnInit() {
+    this.menuController.enable(true);
+    this.findActiveNotifications();
+  }
+
+  findActiveNotifications() {
+    this.notificationService.findActiveNotifications().subscribe(data => {
+      this.notices = data;
+    });
+  }
+
+  viewNotice(notice) {
+    let navParam: NavigationExtras = {
+      queryParams: {
+        notice: JSON.stringify(notice)
+      }
+    }
+    this.router.navigate(['/notice-view'], navParam);
+  }
+
+  /*
   notices = [
     {
       title: 'First Samester Exam',
@@ -28,21 +60,7 @@ export class NoticePage implements OnInit {
       notice: 'Your third semester exam will held on 15 march 2019.',
       date: '15 march 2019'
     }
-  ] 
-  constructor(
-    private router: Router
-  ) { }
-
-  ngOnInit() {
-  }
-
-  viewNotice(notice){
-    let navParam: NavigationExtras = {
-      queryParams: {
-        notice: JSON.stringify(notice)
-      }
-    }
-    this.router.navigate(['/notice-view'], navParam);
-  }
+  ]
+  */
 
 }

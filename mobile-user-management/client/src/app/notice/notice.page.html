@@ -11,11 +11,14 @@
   <ion-card *ngFor="let notice of notices" (click)="viewNotice(notice)">
     <ion-card-header>
         <img src="../../assets/images/megaphone.png"/>
-        <ion-label>{{notice.title}}</ion-label>
+        <ion-label>{{notice.notificationsType}} / {{notice.title}} </ion-label>
     </ion-card-header>
     <ion-card-content>
       <img src="../../assets/images/calendar.png"/>
-      <ion-label>Date<br>{{notice.date}}</ion-label>
+      <ion-label>Date<br>{{notice.notificationDate}}</ion-label>
+    </ion-card-content>
+    <ion-card-content>
+      <ion-label>Details: <br>{{notice.notificationContent}}</ion-label>
     </ion-card-content>
   </ion-card>
 

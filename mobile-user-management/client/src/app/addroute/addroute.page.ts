@@ -14,7 +14,8 @@ export class AddRoutePage implements OnInit {
   public route = {} as Route;
   routeStops: Array<RouteStop>;
   routeForm: FormGroup;
-
+  
+  
   constructor(public formBuilder: FormBuilder,
     private menuController: MenuController,
     private transportService: TransportService) {
@@ -23,7 +24,9 @@ export class AddRoutePage implements OnInit {
       startPoint: new FormControl(),
       endPoint: new FormControl(),
       vehicle: new FormControl(),
-      description: new FormControl()
+      description: new FormControl(),
+      stopName: new FormControl(),
+      stopKm: new FormControl()
     });
   }
 

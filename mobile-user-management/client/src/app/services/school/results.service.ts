@@ -37,4 +37,8 @@ export class ResultsService {
   findResultsByStudentIdAndClassAndSemester(studentId : number, classGrade : number, semester : string): Observable<any> {
     return this.http.get(API_URL + "/api/v1/results/summary/" + studentId + "/" + classGrade + "/" + semester, { headers: this.headers });
   }
+
+  addResult(result: Result): Observable<any> {
+    return this.http.post(API_URL + "/api/v1/results/add", JSON.stringify(result), {headers: this.headers});
+  }
 }

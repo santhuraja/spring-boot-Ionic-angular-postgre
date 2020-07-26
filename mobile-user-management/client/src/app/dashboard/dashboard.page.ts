@@ -68,6 +68,11 @@ export class DashboardPage implements OnInit {
       icon: 'book'
     },
     {
+      title: 'Add Result',
+      url: '/addresult',
+      icon: 'bookmarks'
+    },
+    {
       title: 'Downloads',
       url: '/download',
       icon: 'download'

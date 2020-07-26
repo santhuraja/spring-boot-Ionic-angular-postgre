@@ -45,16 +45,13 @@
 
             </ion-col>
           </ion-row>
-          <ion-row class="cell-class">
-            <ion-col class="cell-class"><ion-input type="text" class="form-control input-text-custom" formControlName= "vehicle" [(ngModel)]="route.vehicle"></ion-input></ion-col>
-            <ion-col class="cell-class"><ion-input type="text" class="form-control input-text-custom" formControlName= "vehicle" [(ngModel)]="route.vehicle"></ion-input></ion-col>
-            <ion-col class="cell-class"><ion-icon name="trash" color="primary"></ion-icon></ion-col>
-          </ion-row>
-          <ion-row class="cell-class">
-            <ion-col class="cell-class"><ion-input type="text" class="form-control input-text-custom" formControlName= "vehicle" [(ngModel)]="route.vehicle"></ion-input></ion-col>
-            <ion-col class="cell-class"><ion-input type="text" class="form-control input-text-custom" formControlName= "vehicle" [(ngModel)]="route.vehicle"></ion-input></ion-col>
-            <ion-col class="cell-class"><ion-icon name="trash" color="primary"></ion-icon></ion-col>
-          </ion-row>
+          <div data-ng-controller="route.routeStops as routeStop">
+            <ion-row class="cell-class">
+              <ion-col class="cell-class"><ion-input type="text" class="form-control input-text-custom" color = "dark" formControlName= "stopName" ></ion-input></ion-col>
+              <ion-col class="cell-class"><ion-input type="text" class="form-control input-text-custom" color = "dark" formControlName= "stopKm" ></ion-input></ion-col>
+              <ion-col class="cell-class"><ion-icon name="trash" color="primary"></ion-icon></ion-col>
+            </ion-row>
+          </div>
         </ion-grid>
       </ion-item>
       <ion-item>

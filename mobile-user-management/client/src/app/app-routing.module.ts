@@ -49,6 +49,7 @@ const routes: Routes = [
   //{ path: 'bubble', loadChildren: './bubble/bubble.module#BubblePageModule',  canActivate: [AuthGuard] },
   { path: 'addroute', loadChildren: './addroute/addroute.module#AddRoutePageModule' },
   { path: 'addevent', loadChildren: './addevent/addevent.module#AddEventPageModule' },
+  { path: 'addresult', loadChildren: './addresult/addresult.module#AddResultPageModule' },
   { path: '403', component: ForbiddenComponent }
 ];
 

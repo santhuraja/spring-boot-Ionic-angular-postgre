@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
+import { SyllabusService } from '../services/school/syllabus.service';
+import { Syllabus } from '../model/syllabus';
 
 @Component({
   selector: 'app-syllabus',
@@ -6,6 +9,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./syllabus.page.scss'],
 })
 export class SyllabusPage implements OnInit {
+ 
+  syllabuses: Array<Syllabus>;
+
+  constructor(
+    private syllabusService: SyllabusService,
+    private menuController: MenuController) { }
+
+  ngOnInit() {
+    this.menuController.enable(true);
+    this.findSyllabusByClass(4);
+  }
+
+  findSyllabusByClass(classGrade : number) {
+    this.syllabusService.findSyllabusByClass(classGrade).subscribe(data => {
+      this.syllabuses = data;
+    });
+  }
+
+  /*
   syllabuses = [
     {
       title: 'Math',
@@ -28,9 +50,8 @@ export class SyllabusPage implements OnInit {
       date: '01 Apr 2019'
     }
   ]
-  constructor() { }
+  */
 
-  ngOnInit() {
-  }
+
 
 }

@@ -68,6 +68,31 @@
       "room": "205",
       "date": "15 Jan 2021",
       "description": "page number 5, 6"
-    }    
+    }
+  ],
+
+  "notifications": [
+    {  
+      "notificationsId": 3,
+      "notificationsType": "SMS",
+      "active": "Y",
+      "notificationDate": "13 Jul 2020",
+      "notificationContent": "English page number 1, 2"
+    },
+    {
+      "notificationsId": 4,
+      "notificationsType": "Web",
+      "active": "Y",
+      "notificationDate": "14 Jul 2020",
+      "notificationContent": "page number 3, 4"
+    },
+    {
+      "notificationsId": 5,
+      "notificationsType": "Web",
+      "active": "N",
+      "notificationDate": "15 Jan 2021",
+      "notificationContent": "page number 5, 6"
+    }
   ]
+
 }

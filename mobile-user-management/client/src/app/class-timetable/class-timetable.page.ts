@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
+import { ClassTimetableService } from '../services/school/class.timetable.service';
+import { ClassTimetable } from '../model/classTimetable';
 
 @Component({
   selector: 'app-class-timetable',
@@ -6,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./class-timetable.page.scss'],
 })
 export class ClassTimetablePage implements OnInit {
+
+/*
   timeTable = [
     {
       code: 'MAT',
@@ -32,9 +37,24 @@ export class ClassTimetablePage implements OnInit {
       color: '#5a00f6'
     }
   ]
-  constructor() { }
+  */
+
+  timeTable: Array<ClassTimetable>;
+
+  constructor(
+    private classTimetableService: ClassTimetableService,
+    private menuController: MenuController) { }
+ 
 
   ngOnInit() {
+    this.menuController.enable(true);
+    this.findClassTimetablesByClass(4);
+  }
+
+  findClassTimetablesByClass(classGrade : number) {
+    this.classTimetableService.findClassTimetablesByClass(classGrade).subscribe(data => {
+      this.timeTable = data;
+    });
   }
 
 }

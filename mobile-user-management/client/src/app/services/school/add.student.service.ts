@@ -31,7 +31,7 @@ export class AddStudentService {
   }
   
  addStudent(student: Student): Observable<any> {
-    return this.http.post(API_URL + "/v1/students/add", JSON.stringify(student), {headers: this.headers});
+    return this.http.post(API_URL + "/api/v1/students/add", JSON.stringify(student), {headers: this.headers});
   }
 
 

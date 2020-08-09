@@ -1,7 +1,131 @@
 {
-"properties": {
-  "environment": "DEV",
-  "appVersion": "1.0.0",
-  "apiUrl": "http://localhost:8080"
-}
+  "properties": {
+    "environment": "DEV",
+    "appVersion": "1.0.0",
+    "apiUrl": "http://localhost:8080"
+  },
+
+  "exams": [
+    {  
+      "title": "First Semester",
+      "classGrade": 4,
+      "section": "A",
+      "year": 2020,
+      "semester": "I",
+      "subject": "English",
+      "room": "203",
+      "date": "13 Jul 2020",
+      "time": "09:00 AM - 10:00 AM"
+    },
+    {
+      "title": "First Semester",
+      "classGrade": 4,
+      "section": "A",
+      "year": 2020,
+      "semester": "I",
+      "subject": "Maths",
+      "room": "204",
+      "date": "14 Jul 2020",
+      "time": "11:00 AM - 12:00 PM"
+    },
+    {
+      "title": "Second Semester",
+      "classGrade": 5,
+      "section": "B",
+      "year": 2021,
+      "semester": "I",
+      "subject": "Science",
+      "room": "205",
+      "date": "15 Jan 2021",
+      "time": "10:00 AM - 11:00 AM"
+    }    
+  ],
+
+  "routines": [
+    {  
+      "classGrade": 4,
+      "section": "A",
+      "semester": "I",
+      "subject": "English",
+      "room": "203",
+      "date": "13 Jul 2020",
+      "description": "English page number 1, 2"
+    },
+    {
+      "classGrade": 4,
+      "section": "A",
+      "semester": "I",
+      "subject": "Maths",
+      "room": "204",
+      "date": "14 Jul 2020",
+      "description": "page number 3, 4"
+    },
+    {
+      "classGrade": 5,
+      "section": "B",
+      "semester": "I",
+      "subject": "Science",
+      "room": "205",
+      "date": "15 Jan 2021",
+      "description": "page number 5, 6"
+    }
+  ],
+
+  "notifications": [
+    {  
+      "notificationsId": 3,
+      "notificationsType": "SMS",
+      "active": "Y",
+      "notificationDate": "13 Jul 2020",
+      "notificationContent": "English page number 1, 2"
+    },
+    {
+      "notificationsId": 4,
+      "notificationsType": "Web",
+      "active": "Y",
+      "notificationDate": "14 Jul 2020",
+      "notificationContent": "page number 3, 4"
+    },
+    {
+      "notificationsId": 5,
+      "notificationsType": "Web",
+      "active": "N",
+      "notificationDate": "15 Jan 2021",
+      "notificationContent": "page number 5, 6"
+    }
+  ],
+
+  "syllabuses": [
+    {  
+      "title": "English",
+      "classGrade": 4,
+      "section": "A",
+      "year": 2020,
+      "semester": "I",
+      "subject": "English",
+      "date": "13 Jul 2020",
+      "description": "English syllabus"
+    },
+    {
+      "title": "Maths",
+      "classGrade": 4,
+      "section": "A",
+      "year": 2020,
+      "semester": "I",
+      "subject": "Maths",
+      "date": "14 Jul 2020",
+      "description": "Maths syllabus"
+    },
+    {
+      "title": "Science",
+      "classGrade": 5,
+      "section": "B",
+      "year": 2021,
+      "semester": "I",
+      "subject": "Science",
+      "date": "15 Jan 2021",
+      "description": "Science syllabus"
+    } 
+  ]
+
 }

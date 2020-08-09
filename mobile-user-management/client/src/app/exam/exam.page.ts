@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
+import { ExamScheduleService } from '../services/school/exams.service';
+import { ExamSchedule } from '../model/examSchedule';
 
 @Component({
   selector: 'app-exam',
@@ -6,6 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./exam.page.scss'],
 })
 export class ExamPage implements OnInit {
+
+  exams: Array<ExamSchedule>;
+
+  constructor(
+    private examScheduleService: ExamScheduleService,
+    private menuController: MenuController) { }
+
+/*
   exams = [
     {
       title: 'First Semester',
@@ -40,9 +51,17 @@ export class ExamPage implements OnInit {
       date: '01 Apr 2019'
     }
   ]
-  constructor() { }
+  */
 
   ngOnInit() {
+    this.menuController.enable(true);
+    this.findExamSchedulesByClass(4);
+  }
+
+  findExamSchedulesByClass(classGrade : number) {
+    this.examScheduleService.findExamSchedulesByClass(classGrade).subscribe(data => {
+      this.exams = data;
+    });
   }
 
 }

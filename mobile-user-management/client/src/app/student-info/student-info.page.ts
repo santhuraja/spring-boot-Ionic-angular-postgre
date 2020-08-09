@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Student } from 'src/app/model/student';
+import {MenuController} from '@ionic/angular';
 
 @Component({
   selector: 'app-student-info',
@@ -8,11 +10,15 @@ import { Router } from '@angular/router';
 })
 export class StudentInfoPage implements OnInit {
   segmentVal: any = 'personal';
-  constructor(
-    private router: Router
-  ) { }
+
+  studentInfo : Student;
+  constructor(private router: Router, private activatedRoute: ActivatedRoute,
+    private menu: MenuController) {
+       this.studentInfo = JSON.parse(localStorage.getItem("studentInfo"));
+    }
 
   ngOnInit() {
+    this.menu.enable(true);
   }
 
   segmentChanged( eve ){

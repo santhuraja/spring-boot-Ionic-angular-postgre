@@ -35,8 +35,8 @@
       <ion-col class="cell-class"><ion-text color="primary">{{route.name}}</ion-text><ion-icon name="location-outline"></ion-icon></ion-col>
       <ion-col class="cell-class">
         <ion-text color="primary">
-          <ion-button fill="clear">
-            <ion-icon name="create" color="primary"></ion-icon>
+          <ion-button fill="clear" (click)="editRoute(route)">
+            <ion-icon name="create" color="primary" ></ion-icon>
           </ion-button>
         </ion-text>
       </ion-col>
@@ -49,14 +49,16 @@
       </ion-col>
     </ion-row>
     <ion-row>
+      <!--
       <ion-col size="12" >
         <ion-item class="input-color">
           <ion-label position="floating"><ion-text color="primary">Route Name</ion-text></ion-label>
-          <ion-input  type="text" ></ion-input>
+          <ion-input name="routeName" type="text" ></ion-input>
         </ion-item>
       </ion-col>
+      -->
       <ion-col size="6">
-        <ion-button  size="full" color="secondary">Add Route</ion-button>
+        <ion-button  size="full" color="secondary" (click)="addRoute(routeName)">Add Route</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

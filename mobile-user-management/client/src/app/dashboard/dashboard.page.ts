@@ -22,6 +22,11 @@ export class DashboardPage implements OnInit {
       icon: 'school'
     },
     {
+      title: 'Students',
+      url: '/student',
+      icon: 'people'
+    },    
+    {
       title: 'Add Student',
       url: '/addstudent',
       icon: 'person-add'
@@ -32,7 +37,7 @@ export class DashboardPage implements OnInit {
       icon: 'settings'
     },
     {
-      title: 'Event',
+      title: 'Events',
       url: '/event',
       icon: 'globe'
     },
@@ -40,11 +45,6 @@ export class DashboardPage implements OnInit {
       title: 'Attendance Sheet',
       url: '/attendance',
       icon: 'calendar'
-    },
-    {
-      title: 'Marks',
-      url: '/marks',
-      icon: 'document'
     },
     {
       title: 'Exam Dates',
@@ -63,14 +63,14 @@ export class DashboardPage implements OnInit {
       icon: 'alarm'
     },
     {
-      title: 'Exam Result',
+      title: 'Results',
       url: '/exam-result',
       icon: 'book'
     },
     {
-      title: 'Student',
-      url: '/student',
-      icon: 'people'
+      title: 'Add Result',
+      url: '/addresult',
+      icon: 'bookmarks'
     },
     {
       title: 'Downloads',

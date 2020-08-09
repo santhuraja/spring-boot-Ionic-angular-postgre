@@ -3,10 +3,10 @@
     <ion-buttons slot="start">
       <ion-menu-button color="light"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Exam Result</ion-title>
+    <ion-title>Exam Results</ion-title>
     <ion-buttons slot="end">
       <ion-button fill="clear">
-        <ion-icon md="cloud-download-sharp" ios="cloud-download-outline"></ion-icon>
+        <ion-icon name="cloud-download-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -37,42 +37,42 @@
         <ion-text><b>Subject</b></ion-text>
       </ion-col>
       <ion-col size="3">
-        <ion-text><b>Mark</b></ion-text>
+        <ion-text><b>Obtained Marks</b></ion-text>
       </ion-col>
       <ion-col size="2">
-        <ion-text><b>Grade</b></ion-text>
+        <ion-text><b>Total Marks</b></ion-text>
       </ion-col>
       <ion-col size="3">
-        <ion-text><b>Comment</b></ion-text>
+        <ion-text><b>Rank</b></ion-text>
       </ion-col>
     </ion-row>
-    <ion-row *ngFor="let mark of marks">
+    <ion-row *ngFor="let result of results">
       <ion-col size="4">
-        <ion-text>{{mark.subject}}</ion-text>
+        <ion-text>{{result.subject}}</ion-text>
       </ion-col>
       <ion-col size="3">
-        <ion-text>{{mark.mark}}</ion-text>
+        <ion-text>{{result.obtainedMarks}}</ion-text>
       </ion-col>
       <ion-col size="2">
-        <ion-text>{{mark.grade}}</ion-text>
+        <ion-text>{{result.totalMarks}}</ion-text>
       </ion-col>
       <ion-col size="3">
-        <ion-text>{{mark.commnet}}</ion-text>
+        <ion-text>{{result.rank}}</ion-text>
       </ion-col>
     </ion-row>
   </div>
 
   <ion-row class="result_summary">
     <ion-col size="4">
-      <div>
-        <ion-text class="text_gain">591</ion-text>
-        <ion-text>700</ion-text>
+      <div *ngIf="viewResultSummary">
+        <ion-text class="text_gain">{{viewResultSummary.totalObtainedMarks}}</ion-text>
+        <ion-text>{{viewResultSummary.totalMarks}}</ion-text>
       </div>
     </ion-col>
     <ion-col size="4">
-      <div>
+      <div *ngIf="viewResultSummary">
         <ion-text class="text_gain">GPA</ion-text>
-        <ion-text>9.14</ion-text>
+        <ion-text>{{viewResultSummary.totalAverageMarks}}</ion-text>
       </div>
     </ion-col>
     <ion-col size="4">

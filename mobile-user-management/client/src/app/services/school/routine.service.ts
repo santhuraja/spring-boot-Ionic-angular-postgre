@@ -35,8 +35,7 @@ export class RoutineService {
   }
   
   findRoutinesByClass(classGrade : number): Observable<any> {
-    //return this.http.get(API_URL + "/api/v1/routines", { headers: this.headers });
-    return this.http.get("http://localhost:3000/routines", { headers: this.headers });
+    return this.http.get(API_URL + "/api/v1/routines", { headers: this.headers });
   }
   
 }

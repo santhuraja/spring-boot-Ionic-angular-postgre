@@ -35,8 +35,7 @@ export class SyllabusService {
   }
   
   findSyllabusByClass(classGrade : number): Observable<any> {
-    //return this.http.get(API_URL + "/api/v1/syllabuses", { headers: this.headers });
-    return this.http.get("http://localhost:3000/syllabuses", { headers: this.headers });
+    return this.http.get(API_URL + "/api/v1/syllabuses", { headers: this.headers });
   }
   
 }

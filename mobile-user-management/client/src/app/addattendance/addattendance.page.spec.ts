@@ -4,7 +4,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddAttendancePage } from './addattendance.page';
 
-describe('AttendancePage', () => {
+describe('AddAttendancePage', () => {
   let component: AddAttendancePage;
   let fixture: ComponentFixture<AddAttendancePage>;
 

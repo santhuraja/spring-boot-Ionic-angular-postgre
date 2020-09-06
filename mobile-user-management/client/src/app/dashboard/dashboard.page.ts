@@ -47,6 +47,11 @@ export class DashboardPage implements OnInit {
       icon: 'calendar'
     },
     {
+      title: 'Add Attendance',
+      url: '/addattendance',
+      icon: 'calendar'
+    },
+    {
       title: 'Exam Dates',
       url: '/exam',
       icon: 'paper'

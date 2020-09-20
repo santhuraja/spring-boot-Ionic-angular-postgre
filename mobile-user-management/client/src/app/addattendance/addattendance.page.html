@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button color="light"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Student Attendance</ion-title>
+    <ion-title>Add Attendance</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -74,10 +74,11 @@
         <ion-select-option value="DEC">DEC</ion-select-option>
       </ion-select>
     </ion-item>
-    <ion-card-header class="month" color="primary">
-      <ion-card-title><span style="font-size:18px">Add Attendance</span></ion-card-title>
-    </ion-card-header>
-       
+
+    <ion-item>
+      <ion-button color="primary" type="submit" expand="block"><ion-text >Add Attendance</ion-text></ion-button>
+      <ion-button color="primary" [routerDirection]="'root'" expand="block" [routerLink]="['/dashboard']" ><ion-text >Cancel</ion-text></ion-button>
+    </ion-item>   
  
   </ion-card>
 

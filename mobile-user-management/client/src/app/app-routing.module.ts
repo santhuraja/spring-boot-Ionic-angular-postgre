@@ -50,7 +50,7 @@ const routes: Routes = [
   { path: 'addroute', loadChildren: './addroute/addroute.module#AddRoutePageModule' },
   { path: 'addevent', loadChildren: './addevent/addevent.module#AddEventPageModule' },
   { path: 'addresult', loadChildren: './addresult/addresult.module#AddResultPageModule' },
-  { path: 'addattendane', loadChildren: './addattendance/addattendance.module#AddAttendancePageModule' },
+  { path: 'addattendance', loadChildren: './addattendance/addattendance.module#AddAttendancePageModule' },
   { path: '403', component: ForbiddenComponent }
 ];
 

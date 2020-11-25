@@ -1,0 +1,50 @@
+<ion-header>
+   <ion-toolbar color="primary">
+     <ion-buttons slot="start">
+       <ion-menu-button color="light"></ion-menu-button>
+     </ion-buttons>
+     <ion-title> SMS </ion-title>
+     <ion-buttons slot="end">
+       <ion-button fill="clear">
+         <ion-icon name="cloud-download-outline"></ion-icon>
+       </ion-button>
+     </ion-buttons>
+   </ion-toolbar>
+ </ion-header>
+ <!-- https://www.npmjs.com/package/ionic4-auto-complete -->
+<ion-content class="background"> 
+  
+  <form [formGroup]="messageForm" class="background">
+
+     <ion-list class="background">
+
+
+        <ion-item margin-bottom> 
+           <ion-label color="primary">To:</ion-label> 
+           <ion-input
+              type="number"
+              formControlName="to"></ion-input> 
+        </ion-item>
+
+
+        <ion-item margin-bottom> 
+           <ion-label color="primary">Name/Group:</ion-label> 
+           <ion-input
+              type="name"
+              formControlName="name"></ion-input> 
+        </ion-item>
+
+
+        <ion-item margin-bottom> 
+           <ion-label color="primary">Message:</ion-label> 
+           <ion-textarea
+              formControlName="message"></ion-textarea> 
+        </ion-item>
+      </ion-list> 
+
+        <ion-card>
+         <ion-button color="primary" type="submit" expand="block"><ion-text >Send your message</ion-text></ion-button>
+       </ion-card>
+
+  </form>
+</ion-content >

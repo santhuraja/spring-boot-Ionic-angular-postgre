@@ -41,37 +41,17 @@
         <ion-select-option value="II">II</ion-select-option>			
       </ion-select>
     </ion-item>
+    
     <ion-item>
-      <ion-label color="primary" position="floating">Year</ion-label>
-      <ion-select value="2000">
-        <ion-select-option value="2001">2001</ion-select-option>
-        <ion-select-option value="2002">2002</ion-select-option>
-        <ion-select-option value="2003">2003</ion-select-option>
-        <ion-select-option value="2004">2004</ion-select-option>
-        <ion-select-option value="2005">2005</ion-select-option>
-        <ion-select-option value="2006">2006</ion-select-option>
-        <ion-select-option value="2007">2007</ion-select-option>
-        <ion-select-option value="2008">2008</ion-select-option>
-        <ion-select-option value="2009">2009</ion-select-option>
-        <ion-select-option value="2010">2010</ion-select-option>
-        <ion-select-option value="2011">2011</ion-select-option>
-      </ion-select>
+      <ion-label color="primary" position="floating">Attendance Date</ion-label>
+      <ion-datetime datetime-left displayFormat="YYYY-MM-DD" class="form-control input-text-custom" ></ion-datetime>
+      
     </ion-item>
     <ion-item>
-      <ion-label color="primary" position="floating">Month</ion-label>
-      <ion-select>
-        <ion-select-option value="JAN">JAN</ion-select-option>
-        <ion-select-option value="FEB">FEB</ion-select-option>
-        <ion-select-option value="MAR">MAR</ion-select-option>
-        <ion-select-option value="APR">APR</ion-select-option>
-        <ion-select-option value="MAY">MAY</ion-select-option>
-        <ion-select-option value="JUN">JUN</ion-select-option>
-        <ion-select-option value="JUL">JUL</ion-select-option>
-        <ion-select-option value="AUG">AUG</ion-select-option>
-        <ion-select-option value="SEP">SEP</ion-select-option>
-        <ion-select-option value="OCT">OCT</ion-select-option>
-        <ion-select-option value="NOV">NOV</ion-select-option>
-        <ion-select-option value="DEC">DEC</ion-select-option>
+      <ion-label color="primary" position="floating">Attendance</ion-label>
+      <ion-select class="form-control input-text-custom" id="semester" name="semester" >
+        <ion-select-option value="P">Present</ion-select-option>
+        <ion-select-option value="A">Absent</ion-select-option>			
       </ion-select>
     </ion-item>
 

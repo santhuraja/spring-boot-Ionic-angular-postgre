@@ -102,6 +102,16 @@ export class DashboardPage implements OnInit {
       title: 'Transport',
       url: '/transport',
       icon: 'bus'
+    },
+    {
+      title: 'Email',
+      url: '/email',
+      icon: 'mail'
+    },
+    {
+      title: 'Message',
+      url: '/message',
+      icon: 'chatboxes'
     }
   ]
 

@@ -94,36 +94,40 @@ body {font-family: Verdana, sans-serif;}
   color: #777;
 }
 
-.days li .active {
-  padding: 5px;
-  border-radius: 10px;
+.days li .P {
+  padding: 4px;
+  border-radius: 50%;
   background: #1a71f3;
   color: white !important
 }
 
 
-.days li .active_single {
-  padding: 6px;
-  border-radius: 9px;
+.days li .PS {
+  border-radius: 50%;
   background: #1a71f3;
-  color: white !important
+  color: white !important;
+  padding-left: 7px;
+  padding-top: 4px;
+  padding-right: 7px;
+  padding-bottom: 4px;
 }
 
 
-.days li .inactive {
-    padding: 5px;
-    border-radius: 10px;
+.days li .A {
+    border-radius: 50%;
     background: #e01d0f;
-    color: white !important
+    color: white !important;
+    padding: 4px;
   }
-
-
   
-.days li .inactive_single {
-  padding: 6px;
-  border-radius: 9px;
+.days li .AS {
+  border-radius: 50%;
   background: #e01d0f;
-  color: white !important
+  color: white !important;
+  padding-left: 7px;
+  padding-top: 4px;
+  padding-right: 7px;
+  padding-bottom: 4px;
 }
 
 .days li .weekend {

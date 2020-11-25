@@ -51,6 +51,8 @@ const routes: Routes = [
   { path: 'addevent', loadChildren: './addevent/addevent.module#AddEventPageModule' },
   { path: 'addresult', loadChildren: './addresult/addresult.module#AddResultPageModule' },
   { path: 'addattendance', loadChildren: './addattendance/addattendance.module#AddAttendancePageModule' },
+  { path: 'email', loadChildren: './email/email.module#EmailPageModule' },
+  { path: 'message', loadChildren: './message/message.module#MessagePageModule' },
   { path: '403', component: ForbiddenComponent }
 ];
 

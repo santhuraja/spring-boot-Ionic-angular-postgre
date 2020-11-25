@@ -75,10 +75,23 @@
       </ion-select>
     </ion-item>
     <ion-card-header class="month" color="primary">
-      <ion-card-title><span style="font-size:18px">August 2020</span></ion-card-title>
+      <ion-card-title *ngIf="attendance">
+        <span style="font-size:18px" *ngIf="attendance.month == 1">January </span> 
+        <span style="font-size:18px" *ngIf="attendance.month == 2">February </span>
+        <span style="font-size:18px" *ngIf="attendance.month == 3">March </span>
+        <span style="font-size:18px" *ngIf="attendance.month == 4">April </span>
+        <span style="font-size:18px" *ngIf="attendance.month == 5">May </span>
+        <span style="font-size:18px" *ngIf="attendance.month == 6">June </span>
+        <span style="font-size:18px" *ngIf="attendance.month == 7">July </span>
+        <span style="font-size:18px" *ngIf="attendance.month == 8">August </span>
+        <span style="font-size:18px" *ngIf="attendance.month == 9">September </span>
+        <span style="font-size:18px" *ngIf="attendance.month == 10">October </span>
+        <span style="font-size:18px" *ngIf="attendance.month == 11">November </span>
+        <span style="font-size:18px" *ngIf="attendance.month == 12">December </span>
+        <span style="font-size:18px">{{attendance.year}}</span></ion-card-title>
     </ion-card-header>
        
-    <ul class="weekdays">
+ <ul class="weekdays">
       <li>Mo</li>
       <li>Tu</li>
       <li>We</li>
@@ -86,43 +99,16 @@
       <li>Fr</li>
       <li>Sa</li>
       <li>Su</li>
-    </ul>
-   
-<ul class="days">
-  <li></li>
-  <li></li>
-  <li></li>  
-  <li><span class="active_single">1</span></li>
-  <li><span class="active_single">2</span></li>
-  <li><span class="active_single">3</span></li>
-  <li><span class="inactive_single">4</span></li>
-  <li><span class="inactive_single">5</span></li>
-  <li><span class="weekend_single">6</span></li>
-  <li><span class="weekend_single">7</span></li>
-  <li>8</li>
-  <li>9</li>
-  <li><span class="active">10</span></li>
-  <li><span class="active">11</span></li>
-  <li><span class="inactive">12</span></li>
-  <li><span class="weekend">13</span></li>
-  <li><span class="weekend">14</span></li>
-  <li>15</li>
-  <li>16</li>
-  <li>17</li>
-  <li>18</li>
-  <li>19</li>
-  <li>20</li>
-  <li>21</li>
-  <li>22</li>
-  <li>23</li>
-  <li>24</li>
-  <li>25</li>
-  <li>26</li>
-  <li>27</li>
-  <li>28</li>
-  <li>29</li>
-  <li>30</li>
-  <li>31</li>
+</ul>
+
+<ul class="days" *ngIf="attendance">
+  <li *ngFor="let page of attendance.attendanceResults">
+    <div *ngIf="page.day < 10 && page.attendanceValue == 'Y'"><span class="PS">{{page.day}}</span></div>
+    <div *ngIf="page.day >= 10 && page.attendanceValue == 'Y'"><span class="P">{{page.day}}</span></div>
+    <div *ngIf="page.day < 10 && page.attendanceValue == 'N'"><span class="AS">{{page.day}}</span></div>
+    <div *ngIf="page.day >= 10 && page.attendanceValue == 'N'"><span class="A">{{page.day}}</span></div>
+    <div *ngIf="page.attendanceValue == ''"><span>{{page.day}}</span></div>
+  </li>
   </ul>   
   </ion-card>
 

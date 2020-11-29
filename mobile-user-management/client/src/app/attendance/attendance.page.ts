@@ -18,5 +18,5 @@ export class AttendancePage implements OnInit {
       this.attendance = data;
     });
   }
-
+  
 }

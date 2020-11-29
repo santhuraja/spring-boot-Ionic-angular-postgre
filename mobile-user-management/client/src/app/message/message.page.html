@@ -19,32 +19,34 @@
      <ion-list class="background">
 
 
-        <ion-item margin-bottom> 
-           <ion-label color="primary">To:</ion-label> 
+        <ion-item class="ion-margin-bottom"> 
+           <ion-label color="primary"  position="floating">To:</ion-label> 
            <ion-input
               type="number"
               formControlName="to"></ion-input> 
         </ion-item>
 
 
-        <ion-item margin-bottom> 
-           <ion-label color="primary">Name/Group:</ion-label> 
-           <ion-input
-              type="name"
-              formControlName="name"></ion-input> 
-        </ion-item>
+      <ion-item class="ion-margin-bottom"> 
+          <ion-label color="primary">Name/Group:</ion-label> 
+          <ion-input>
+          <input list="browsers" style="color: blue; background-color: transparent;" class="background" type="name" formControlName="name">
+          <datalist id="browsers">
+            <option *ngFor="let student of studentList" [value]="student.studentName" >{{student.studentName}}</option>
+          </datalist>
+        </ion-input>
+      </ion-item>
 
 
-        <ion-item margin-bottom> 
-           <ion-label color="primary">Message:</ion-label> 
+        <ion-item class="ion-margin-bottom" > 
+           <ion-label color="primary" position="floating">Message:</ion-label> 
            <ion-textarea
               formControlName="message"></ion-textarea> 
         </ion-item>
-      </ion-list> 
-
-        <ion-card>
+        </ion-list> 
+     <ion-card>
          <ion-button color="primary" type="submit" expand="block"><ion-text >Send your message</ion-text></ion-button>
-       </ion-card>
+     </ion-card>
 
   </form>
 </ion-content >

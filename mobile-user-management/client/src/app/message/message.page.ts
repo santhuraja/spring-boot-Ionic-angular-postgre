@@ -2,6 +2,8 @@ import { Component} from '@angular/core';
 import { Validators, FormBuilder, FormGroup} from '@angular/forms';
 import { NavController } from '@ionic/angular';
 import { ActionSheetController } from '@ionic/angular';
+import { StudentService } from '../services/school/student.service';
+import { Student } from '../model/student';
 
 @Component({
   selector: 'app-message',
@@ -11,15 +13,14 @@ import { ActionSheetController } from '@ionic/angular';
 
 export class MessagePage {
 
-public labelAttribute:string;
-  
-public objects:any[];
+studentList: Array<Student>;
 
 messageForm : FormGroup;
 
 constructor(public formBuilder: FormBuilder,
                public navCtrl 		: NavController,
-               public actionSheetController: ActionSheetController) 
+               public actionSheetController: ActionSheetController,
+               private studentService: StudentService) 
    {
       this.messageForm = formBuilder.group({
          "to"            : ["", Validators.required],
@@ -27,19 +28,13 @@ constructor(public formBuilder: FormBuilder,
          "message"       : ["", Validators.required]
       });
 
-      const objects = [ ]
+      this.findAllStudents();
    }
 
-   protected filter(keyword) {
-      keyword = keyword.toLowerCase();
-  
-      return this.objects.filter(
-        (object) => {
-          const value = object[this.labelAttribute].toLowerCase();
-  
-          return value.includes(keyword);
-        }
-      );
-    }
+   findAllStudents(){
+    this.studentService.findAllStudents().subscribe(data => {
+      this.studentList = data;
+    });
+  }
   
 }

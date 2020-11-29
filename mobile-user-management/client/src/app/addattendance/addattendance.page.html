@@ -47,13 +47,30 @@
       <ion-datetime datetime-left displayFormat="YYYY-MM-DD" class="form-control input-text-custom" ></ion-datetime>
       
     </ion-item>
-    <ion-item>
+    <!-- <ion-item>
       <ion-label color="primary" position="floating">Attendance</ion-label>
-      <ion-select class="form-control input-text-custom" id="semester" name="semester" >
+       <ion-select class="form-control input-text-custom" id="semester" name="semester" >
         <ion-select-option value="P">Present</ion-select-option>
         <ion-select-option value="A">Absent</ion-select-option>			
-      </ion-select>
-    </ion-item>
+      </ion-select> 
+
+      <option *ngFor="let student of studentList" [value]="student.studentName" >{{student.studentName}}</option>
+    </ion-item> -->
+    <ion-grid class="cell-class">
+      <ion-row class="cell-class">
+        <ion-col class="cell-class-first-col" size-sm="2" size="4"><ion-label color="primary" >Attendance</ion-label>
+        </ion-col>
+        <ion-col class="cell-class">
+          <ion-label color="primary">Name</ion-label>
+        </ion-col>
+      </ion-row>
+      <div *ngFor="let student of studentList">
+        <ion-row class="cell-class">
+          <ion-col class="cell-class-first-col" size-sm="2" size="4"><ion-checkbox color="primary"></ion-checkbox></ion-col>
+          <ion-col class="cell-class"><ion-label color="primary">{{student.studentName}}</ion-label></ion-col>
+        </ion-row>
+      </div>
+    </ion-grid>
 
     <ion-item>
       <ion-button color="primary" type="submit" expand="block"><ion-text >Add Attendance</ion-text></ion-button>

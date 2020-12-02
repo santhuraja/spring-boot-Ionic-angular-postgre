@@ -12,12 +12,13 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { CalendarComponent } from 'ionic2-calendar/calendar';
-
+import { File } from '@ionic-native/file/ngx';
 //import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 //import { AuthService } from './services/auth.service';
 import { environment } from '../environments/environment';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
-
+import { EmailComposer } from '@ionic-native/email-composer/ngx';
+import { AutoCompleteModule } from 'ionic4-auto-complete';
 //const keycloakService = new KeycloakService();
 
 @NgModule({
@@ -28,19 +29,22 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
     HttpClientModule,
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    AutoCompleteModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    Camera,
     CalendarComponent,
+    EmailComposer,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     // {
     //   provide: KeycloakService,
     //   useValue: keycloakService
     // },
     // AuthService
+    Camera,
+    File ,
   ],
   entryComponents: [AppComponent]
 })

@@ -47,6 +47,11 @@ export class DashboardPage implements OnInit {
       icon: 'calendar'
     },
     {
+      title: 'Add Attendance',
+      url: '/addattendance',
+      icon: 'calendar'
+    },
+    {
       title: 'Exam Dates',
       url: '/exam',
       icon: 'paper'
@@ -97,6 +102,16 @@ export class DashboardPage implements OnInit {
       title: 'Transport',
       url: '/transport',
       icon: 'bus'
+    },
+    {
+      title: 'Email',
+      url: '/email',
+      icon: 'mail'
+    },
+    {
+      title: 'Message',
+      url: '/message',
+      icon: 'chatboxes'
     }
   ]
 

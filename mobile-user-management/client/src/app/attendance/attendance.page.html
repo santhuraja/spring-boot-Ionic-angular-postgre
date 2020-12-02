@@ -1,85 +1,115 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button color="light"></ion-menu-button>
     </ion-buttons>
-    <ion-title>
-      {{ viewTitle }}
-    </ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="today()">Today</ion-button>
-    </ion-buttons>
+    <ion-title>Student Attendance</ion-title>
   </ion-toolbar>
 </ion-header>
- 
-<ion-content>
- 
-  <!-- Card for adding a new event -->
-  <ion-card>
-    <ion-card-header color="primary" class="tappable" (click)="collapseCard = !collapseCard">
-      <ion-card-title >Add Attendance</ion-card-title>
-    </ion-card-header>
-    <ion-card-content *ngIf="collapseCard">
- 
-      <ion-item>
-        <ion-input type="text" placeholder="Title" [(ngModel)]="event.title"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input type="text" placeholder="Description" [(ngModel)]="event.desc"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Start</ion-label>
-        <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.startTime" [min]="minDate"></ion-datetime>
-      </ion-item>
-      <ion-item>
-        <ion-label>End</ion-label>
-        <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.endTime" [min]="minDate"></ion-datetime>
-      </ion-item>
-      <ion-item>
-        <ion-label>All Day?</ion-label>
-        <ion-checkbox [(ngModel)]="event.allDay"></ion-checkbox>
-      </ion-item>
-      <ion-button fill="outline" expand="block" (click)="addEvent()" [disabled]="event.title == ''">Add Attendance</ion-button>
- 
-    </ion-card-content>
-  </ion-card>
- 
-  <ion-row>
-    <!-- Change the displayed calendar mode -->
-    <ion-col size="4">
-      <ion-button expand="block" [color]="calendar.mode == 'month' ? 'primary' : 'secondary'" (click)="changeMode('month')">Month</ion-button>
-    </ion-col>
-    <ion-col size="4">
-      <ion-button expand="block" [color]="calendar.mode == 'week' ? 'primary' : 'secondary'" (click)="changeMode('week')">Week</ion-button>
-    </ion-col>
 
- 
-    <!-- Move back one screen of the slides -->
-    <ion-col size="6" class="ion-text-left">
-      <ion-button fill="clear" (click)="back()">
-        <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
-      </ion-button>
-    </ion-col>
- 
-    <!-- Move forward one screen of the slides -->
-    <ion-col size="6" class="ion-text-right">
-      <ion-button fill="clear" (click)="next()">
-        <ion-icon name="arrow-forward" slot="icon-only"></ion-icon>
-      </ion-button>
-    </ion-col>
-  </ion-row>
- 
-  <calendar 
-  [eventSource]="eventSource" 
-  [calendarMode]="calendar.mode" 
-  [currentDate]="calendar.currentDate"
-  (onEventSelected)="onEventSelected($event)"
-  (onTitleChanged)="onViewTitleChanged($event)"
-  (onTimeSelected)="onTimeSelected($event)" 
-  startHour="6"
-  endHour="20"
-  step="30"
-  startingDayWeek="1">
-  </calendar>
- 
+<ion-content class="background">
+  <ion-card>
+    <ion-item>
+      <ion-label color="primary" position="floating">Class</ion-label>
+      <ion-select class="form-control input-text-custom" id="class" name="class" >
+        <ion-select-option value="1">1</ion-select-option>
+        <ion-select-option value="2">2</ion-select-option>
+        <ion-select-option value="3">3</ion-select-option>
+        <ion-select-option value="4">4</ion-select-option>
+        <ion-select-option value="5">5</ion-select-option>
+        <ion-select-option value="6">6</ion-select-option>
+        <ion-select-option value="7">7</ion-select-option>
+        <ion-select-option value="8">8</ion-select-option>
+        <ion-select-option value="9">9</ion-select-option>
+        <ion-select-option value="10">10</ion-select-option>		
+      </ion-select>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label color="primary" position="floating">Section</ion-label>
+      <ion-select class="form-control input-text-custom" id="section" name="section" >
+        <ion-select-option value="A">A</ion-select-option>
+        <ion-select-option value="B">B</ion-select-option>
+        <ion-select-option value="C">C</ion-select-option>
+        <ion-select-option value="D">D</ion-select-option>			
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" position="floating">Semester</ion-label>
+      <ion-select class="form-control input-text-custom" id="semester" name="semester" >
+        <ion-select-option value="I">I</ion-select-option>
+        <ion-select-option value="II">II</ion-select-option>			
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" position="floating">Year</ion-label>
+      <ion-select value="2000">
+        <ion-select-option value="2010">2010</ion-select-option>
+        <ion-select-option value="2011">2011</ion-select-option>
+        <ion-select-option value="2012">2012</ion-select-option>
+        <ion-select-option value="2013">2013</ion-select-option>
+        <ion-select-option value="2014">2014</ion-select-option>
+        <ion-select-option value="2015">2015</ion-select-option>
+        <ion-select-option value="2016">2016</ion-select-option>
+        <ion-select-option value="2017">2017</ion-select-option>
+        <ion-select-option value="2018">2018</ion-select-option>
+        <ion-select-option value="2019">2019</ion-select-option>
+        <ion-select-option value="2020">2020</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" position="floating">Month</ion-label>
+      <ion-select>
+        <ion-select-option value="JAN">JAN</ion-select-option>
+        <ion-select-option value="FEB">FEB</ion-select-option>
+        <ion-select-option value="MAR">MAR</ion-select-option>
+        <ion-select-option value="APR">APR</ion-select-option>
+        <ion-select-option value="MAY">MAY</ion-select-option>
+        <ion-select-option value="JUN">JUN</ion-select-option>
+        <ion-select-option value="JUL">JUL</ion-select-option>
+        <ion-select-option value="AUG">AUG</ion-select-option>
+        <ion-select-option value="SEP">SEP</ion-select-option>
+        <ion-select-option value="OCT">OCT</ion-select-option>
+        <ion-select-option value="NOV">NOV</ion-select-option>
+        <ion-select-option value="DEC">DEC</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-card-header class="month" color="primary">
+      <ion-card-title *ngIf="attendance">
+        <span style="font-size:18px" *ngIf="attendance.month == 1">January </span> 
+        <span style="font-size:18px" *ngIf="attendance.month == 2">February </span>
+        <span style="font-size:18px" *ngIf="attendance.month == 3">March </span>
+        <span style="font-size:18px" *ngIf="attendance.month == 4">April </span>
+        <span style="font-size:18px" *ngIf="attendance.month == 5">May </span>
+        <span style="font-size:18px" *ngIf="attendance.month == 6">June </span>
+        <span style="font-size:18px" *ngIf="attendance.month == 7">July </span>
+        <span style="font-size:18px" *ngIf="attendance.month == 8">August </span>
+        <span style="font-size:18px" *ngIf="attendance.month == 9">September </span>
+        <span style="font-size:18px" *ngIf="attendance.month == 10">October </span>
+        <span style="font-size:18px" *ngIf="attendance.month == 11">November </span>
+        <span style="font-size:18px" *ngIf="attendance.month == 12">December </span>
+        <span style="font-size:18px">{{attendance.year}}</span></ion-card-title>
+    </ion-card-header>
+       
+ <ul class="weekdays">
+      <li>Mo</li>
+      <li>Tu</li>
+      <li>We</li>
+      <li>Th</li>
+      <li>Fr</li>
+      <li>Sa</li>
+      <li>Su</li>
+</ul>
+
+<ul class="days" *ngIf="attendance">
+  <li *ngFor="let page of attendance.attendanceResults">
+    <div *ngIf="page.day < 10 && page.attendanceValue == 'Y'"><span class="PS">{{page.day}}</span></div>
+    <div *ngIf="page.day >= 10 && page.attendanceValue == 'Y'"><span class="P">{{page.day}}</span></div>
+    <div *ngIf="page.day < 10 && page.attendanceValue == 'N'"><span class="AS">{{page.day}}</span></div>
+    <div *ngIf="page.day >= 10 && page.attendanceValue == 'N'"><span class="A">{{page.day}}</span></div>
+    <div *ngIf="page.attendanceValue == ''"><span>{{page.day}}</span></div>
+  </li>
+  </ul>   
+  </ion-card>
+
 </ion-content>

@@ -1,0 +1,77 @@
+<ion-header>
+   <ion-toolbar color="primary">
+     <ion-buttons slot="start">
+       <ion-menu-button color="light"></ion-menu-button>
+     </ion-buttons>
+     <ion-title> E-mailer</ion-title>
+     <ion-buttons slot="end">
+       <ion-button fill="clear">
+         <ion-icon name="cloud-download-outline"></ion-icon>
+       </ion-button>
+     </ion-buttons>
+   </ion-toolbar>
+ </ion-header>
+
+<ion-content class="background"> 
+  
+  <form [formGroup]="emailForm" class="background">
+
+     <ion-list class="background">
+
+
+        <ion-item margin-bottom> 
+           <ion-label color="primary" position="floating">To:</ion-label> 
+           <ion-input
+              type="email"
+              formControlName="to"></ion-input> 
+        </ion-item>
+
+
+        <ion-item margin-bottom> 
+           <ion-label color="primary" position="floating">Cc:</ion-label> 
+           <ion-input
+              type="email"
+              formControlName="cc"></ion-input> 
+        </ion-item>
+
+
+        <ion-item margin-bottom> 
+           <ion-label color="primary" position="floating">Bcc:</ion-label> 
+           <ion-input
+              type="email"
+              formControlName="bcc"></ion-input> 
+        </ion-item>
+
+
+        <ion-item margin-bottom> 
+           <span
+              ion-button
+              color="primary"
+              text-center
+              block 
+              (click)="selectImage()"
+             ><ion-label color="primary">Attachment</ion-label></span> 
+        </ion-item>
+
+
+        <ion-item margin-bottom> 
+           <ion-label color="primary" position="floating">Subject:</ion-label> 
+           <ion-input
+              type="string"
+              formControlName="subject"></ion-input> 
+        </ion-item>
+
+
+        <ion-item margin-bottom> 
+           <ion-label color="primary" position="floating">Message:</ion-label> 
+           <ion-textarea
+              formControlName="message"></ion-textarea> 
+        </ion-item>
+      </ion-list> 
+
+        <ion-card>
+         <ion-button color="primary" type="submit" expand="block"><ion-text >Send your message</ion-text></ion-button>
+       </ion-card>
+
+  </form>
+</ion-content >
